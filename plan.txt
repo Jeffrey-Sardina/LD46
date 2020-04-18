@@ -1,0 +1,38 @@
+Main idea:
+    DnD-like text-based adventure game
+    Single player goes into a dungeon? Big-ass tree with hollows inside big enough for a player to get into? Castle? Cave? Abandoned (name of language here) temple?
+        Tree sounds fun
+    They are piecemeal provided a dictionary of Ccaizhdi (txt.file) throughout the game
+
+Puzzle ideas:
+    Rotate columns with three (same) words printed on the each of three sides of the column, player rotates them to make a grammatical sentence
+    Language/cultural riddle
+    Present an object that matches the word printed on an altar/archway/door to activate it
+    Find a common parameter across words 
+    Create a name for themselves, swear fealty to that language's cult
+    Connect semantically similar words (provided a dictionary)
+    Utter a word that matches the picture on an altar/archway/door to activate it
+    Jump only on the tiles that match a specific criteria (i.e. those with 3rd person subjects)
+    Arrange tokens with words on them to create sentences commanding the door/whatever to Open
+
+    BONUS puzzle: Can be a derivation of the above (maybe hidden as a visual/seemingly irrelevant choice, like '5: Check out the pile of rocks.')
+    BONUS puzzle: Something with ASL and/or Irish
+
+Reinforcement ideas (when the player gets the language right): 
+    Open a gate/door/trapdoor/etc.
+    Heal up
+    Get an item
+    Get a positive magical effect (prevent negative effects from happening if miss on a puzzle)
+    Get a book with clues for and of the upcoming puzzles (doesn't have to be directly next)
+    Avoid enemies? So losing a puzzle means having to fight
+    Get a sidekick undead Ccaizhdi goblinoid that helps (would have to be a really difficult puzzle)
+    Nothing happens.
+    A mirage occurs of the zenith of the long-lost Ccaizhdi tree-orc civilization
+
+Punishment ideas:
+    Trap: flames/darts/poison
+    Release a monster (that may die with the right language utterance) 
+    Trapdoor back to one or two puzzles behind, have to do it again with different words
+    Negative magical effect (having to utter a word/sentence more when facing a monster)
+    Condemnation of the Ccaizhdi priest-queen's spirit (maybe for the last puzzle?)
+        Great. Absolutely great!

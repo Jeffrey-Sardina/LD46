@@ -1,0 +1,10 @@
+#single phonemes
+consonants,d̪,t̪,̪p,k,g,f,v,θ,ð,x,h,m,n̪,̪ŋ,j,w,l,b
+vowels,i,e,o,ʊ,ɒ
+codas,m,l,θ,f,x
+
+#cluster types
+onset_clusters,θw,bð,θl
+
+#syllable structures
+syllable_structures,v,cv,vc,cvc,ccv,ccvc

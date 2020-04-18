@@ -1,0 +1,12 @@
+#single phonemes (explosives are in caps)
+consonants,b,d,g,Ɂ,P,T,K,f,v,s,z,ʃ,ʒ,x,ʁ,h,m,n,ŋ,ɬ
+vowels,i,e,u,o,a,ɛ
+codas,b,g,m,ʒ,f,x
+
+#cluster types
+dipthongs,ai,ae
+coda_clusters,ʃt,ʒd,ft,st,fst
+onset_clusters,dz
+
+#syllable structures
+syllable_structures,v,cv,vc,cvc,ccv,vcc,ccvcc

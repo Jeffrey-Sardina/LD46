@@ -1,0 +1,146 @@
+Word orders:
+    O = object; V = verb; S = subject; N = noun; A = adjective; P = preposition; G = genitive (ie, when you a the spoon of silver, silver in in the genitive)
+    VSO
+    PO
+    NG
+    NR
+    NA
+
+Stress
+    First syllable
+    A prefix is never stressed
+
+1s  eth
+1p  edh
+2s  thá
+2p  há
+3s(he)  thil
+3s(she) thol
+3s(it)  thál
+3s(neuter / no gender)  thuul
+3p  thwo
+
+1sobj   NONE
+1pobj   NONE
+2sobj   NONE
+2pobj   NONE
+3sobj   NONE
+3pobj   NONE
+
+1sposs: odeth
+1pposs: odedh
+2sposs: opthá
+2pposs: ohá
+3sposs: othá
+3pposs: othwo
+
+Numbers
+    1   ed̪o
+    2   dhi
+    3   el
+    4   t̪ie
+    5   go
+    6   edá
+    7   áyi
+    8   olám
+    9   ethlo
+    10  ádhwi
+    20  bdheli
+    30  elki
+    40  tá
+    50  goith
+    60  edáni
+    70  ptheem
+    80  dedhe
+    90  ethyá
+    100 pthál
+    1000    mobðem
+    Other Numbers
+        form of unit 1000s and unit 100s and 10s and 1
+        no word for zero
+
+demonstrative pronouns
+    that    bel
+    this    bádh
+    yon     theth
+
+negation:
+    Use the word no (yuu) before the verb
+
+Questions:
+    Raise tone of voice at end of sentence (as we do in English)
+    Word order:
+        If using a question word (who, what, etc; ex 'Who is he?') do QUESTION_WORD VERB SUBJECT OBJECT?
+        If not (ex 'Do you see him?') then use VERB SUBJECT OBJECT as normal. There is no word like English's 'do' in this language
+
+relative pronouns
+    who:    fám
+    whom: NONE
+    that / which:   koth
+
+prefixes
+    nouns
+        ACTOR:  eth(o)
+        singular: BLANK
+        plural: dh(i)
+    verbs
+        present habitual:   thá(m)
+        present:    thuu(m)
+        near past habitual: lá(m)
+        near past:  luu(m)
+        far past habitual:  ná(m)
+        far past:   nuu(m)
+        subjunctive:    fá(th)
+
+
+ACTOR:
+    Use the actor prefix on any noun. This implies the ACTOR is revered, often divine or supernatural
+    Only the arrogant will use themselves as ACTOR
+
+Other verb tenses / moods
+    Expression of the future
+        Expressed by saying 'intends ACTOR that ... VSO'
+            ACTOR is often a god, fate, or other people. Only the arrogant will use themselves as ACTOR
+
+    conditional is a special case of the subjunctive
+        The verb for see (oá) is used in the subjunctive
+        'subj-see ACTOR that ... VSO'
+            ex "Fáth'guu      etho'dhithim koth fánil thá"
+                SEE      the  sea-fairies  that drown he / she
+                literally: May the sea-fairies see that (s)he drown
+                meaning: He / she would drown
+            
+    Imperative simply uses the subjunctive
+        No commands, just wishes
+
+Expressions:
+    (note: O = object, S = subject, IO = indirect object)
+    exceed (prefers ACTOR O than X in Y))
+    belief (speak ACTOR O)
+    sudden (flood(the verb) S action)
+    inspire (given ACTOR's grace)
+    yes (with ACTOR's will)
+    attempt (try S O with ACTOR's sight)
+    so-called (ACTOR prefix to person, used to criticize them for arrogance and taking a name the should not have)
+    must and need (demand ACTOR that ... )
+    want (uses same verb as pray)
+    have / know (give ACTOR O IO)
+    found out (must declare method of finding out (learned I, saw I, heard I, etc))
+    attitude (all emotional states are in the form 'Feel I happy', NOT 'I am happy')
+    alter (change ACTOR O through me)
+
+Articles
+    definite: blank
+    indefinite non-specific: ol
+    indefinite specific: wuul
+
+derivational morphology prefixes:
+    verb to noun:   th(o)
+    noun to adj:    th(i)
+    adj to adv: dh(i)
+    'er': Oth(i)
+
+Spelling rules
+    Use and apostaphe to separate a root from the ACTOR prefix, or from the verb tense marker
+        These markers always come first on a word
+    Other prefixes simply attach to the word, and they attach before the apostrophe-ed prefixes
