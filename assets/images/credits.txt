@@ -8,3 +8,5 @@ chaseafterdruid.jpg: Photo by Lucas Pezeta from Pexels
 decaytome.jpg: Photo by 雨星 ameboshi from Pexels
 findtree.jpg: Photo by Anton Atanasov from Pexels
 branchtoentrance.jpg: https://free-images.com/display/tree_forest_moss_landscape.html
+mouthdrop.jpg: Photo by Skitterphoto from Pexels
+wordsondoor.jpg: Photo by Nicole Avagliano from Pexels, modified 

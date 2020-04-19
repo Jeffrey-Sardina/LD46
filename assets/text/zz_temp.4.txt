@@ -1,2 +1,0 @@
-It's a Gazebo. I'll have lunch in it.
-zz_lunch.txt

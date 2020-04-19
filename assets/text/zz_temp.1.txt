@@ -1,2 +1,0 @@
-Cautiously approach--this gazebo may be dangerous.
-zz_approach.txt
