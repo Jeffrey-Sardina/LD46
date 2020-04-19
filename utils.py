@@ -8,9 +8,22 @@ image_path = 'assets/images/'
 video_path = 'assets/videos/'
 
 def load_text_asset(file_name):
+    '''Get all text in a file'''
     with open(text_path + file_name, 'r') as data:
         text = data.read()
     return text
+
+def load_text_options_asset(file_name):
+    '''Get 2 strings
+        1) option description
+        2) next file
+    '''
+    with open(text_path + file_name, 'r') as data:
+        text = data.readlines()
+
+    description = ''.join(line for line in text[:-1])
+    file_name = text[:-1].strip()
+    return description, file_name
 
 def load_language_module(file_name):
     mapping = {}

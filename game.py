@@ -124,25 +124,47 @@ def create_game_intro_page(container, *args, **kwargs):
     background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
 
     #Text
-    text = load_text_asset('temp.txt')
+    src = 'opening.txt'
+    text = load_text_asset(src)
     width = 4 * screen_width // 5
     label = tk.Label(background, text=text, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
     label.place(in_=background, x = screen_width // 2 - width // 2, y = 5 * screen_height // 10, width = width, height = 3 * screen_height // 10)
-
-    #B1
-    text = load_text_asset('temp.1.txt')
+    
+    more = True
     width = screen_width // 10
-    btn1 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
-    btn1.place(in_=background, x = screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
+    file_base_name = src.split('.')[0]
+    try:
+        text, file_name = load_text_options_asset(file_base_name + '.1.txt')
+        btn1 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
+        btn1.place(in_=background, x = screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
+    except:
+            more = False
 
-    text = load_text_asset('temp.1.txt')
-    btn2 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
-    btn2.place(in_=background, x = 2 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
+    if more:
+        try:
+            text, file_name = load_text_options_asset(file_base_name + '.2.txt')
+            btn2 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
+            btn2.place(in_=background, x = 2 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
+        except:
+            more = False
 
-    text = load_text_asset('temp.1.txt')
-    btn3 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
-    btn3.place(in_=background, x = 3 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
+    if more:
+        try:
+            text, file_name = load_text_options_asset(file_base_name + '.3.txt')
+            btn3 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
+            btn3.place(in_=background, x = 3 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
+        except:
+            more = False
 
+    if more:
+        try:
+            text, file_name = load_text_options_asset(file_base_name + '.4.txt')
+            btn2 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
+            btn2.place(in_=background, x = 2 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
+        except:
+            more = False
+    
+    
     text = load_text_asset('temp.1.txt')
     btn4 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
     btn4.place(in_=background, x = 4 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
