@@ -1,2 +1,2 @@
-You utter the word. Silence looms over you as stand at the bottom of the stairs. All of a sudden, a wall of water erupts from the top of the stairs, pelleting you with drops of water. You lose 1 HP.
+You utter the word. Silence looms over you as stand at the bottom of the stairs. All of a sudden, a wall of water erupts from the top of the stairs and torrents down the stairs towards your defenseless body, ultimately ramming you against the door. You bruise your knees. You lose 1 HP.
 firstpuzzleutter.txt

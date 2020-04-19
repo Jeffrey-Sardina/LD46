@@ -73,12 +73,12 @@ firstpuzzle.txt - Satisfied with your survey, you turn and see a regal staircase
     3. firstpuzzle.3.txt - Utter something.
         firstpuzzleutter.txt - What do you utter?
             1. firstpuzzleutter.1.txt - 'Ccimhai'
-                firstpuzzleright.txt
+                firstpuzzleright.txt - 
             2. firstpuzzleutter.2.txt - 'Zhaib'
-                firstpuzzlewrong.txt - You utter the word. Silence looms over you as stand at the bottom of the stairs. All of a sudden, a wall of water erupts from the top of the stairs, pelleting you with drops of water. You lose 1 HP.
+                firstpuzzlewrong.txt - You utter the word. Silence looms over you as stand at the bottom of the stairs. All of a sudden, a wall of water erupts from the top of the stairs and torrents down the stairs towards your defenseless body, ultimately ramming you against the door. You bruise your knees. You lose 1 HP.
             3. firstpuzzleutter.3.txt - 'Ae'
-                firstpuzzlewrong.txt - You utter the word. Silence looms over you as stand at the bottom of the stairs. All of a sudden, a wall of water erupts from the top of the stairs, pelleting you with drops of water. You lose 1 HP.
+                firstpuzzlewrong.txt - You utter the word. Silence looms over you as stand at the bottom of the stairs. All of a sudden, a wall of water erupts from the top of the stairs and torrents down the stairs towards your defenseless body, ultimately ramming you against the door. You bruise your knees. You lose 1 HP.
             4. firstpuzzleutter.4.txt - 'Ccae'
-                firstpuzzlewrong.txt - You utter the word. Silence looms over you as stand at the bottom of the stairs. All of a sudden, a wall of water erupts from the top of the stairs, pelleting you with drops of water. You lose 1 HP.
+                firstpuzzlewrong.txt - You utter the word. Silence looms over you as stand at the bottom of the stairs. All of a sudden, a wall of water erupts from the top of the stairs and torrents down the stairs towards your defenseless body, ultimately ramming you against the door. You bruise your knees. You lose 1 HP.
 
 firstpuzzleright.txt - 
