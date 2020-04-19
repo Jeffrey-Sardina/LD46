@@ -22,7 +22,7 @@ def load_text_options_asset(file_name):
         text = data.readlines()
 
     description = ''.join(line for line in text[:-1])
-    file_name = text[:-1].strip()
+    file_name = text[-1].strip()
     return description, file_name
 
 def load_language_module(file_name):
