@@ -15,15 +15,25 @@ def description_text_files():
     files = glob.glob(path)
     return [os.path.basename(file_name).split('.')[0] for file_name in files if file_name.count('.') == 1]
 
-
 def load_text_asset(file_name):
     '''
     Get all text in a file
     '''
     path = os.path.join(text_path, file_name)
-    with open(path, 'r') as data:
-        text = data.read()
-    return text
+    if os.path.exists(path):
+        with open(path, 'r') as data:
+            text = data.readlines()
+        if len(text) == 0:
+            return None, None
+        if '.txt' in text[-1]:
+            description = ''.join(line for line in text[:-1])
+            file_name = text[-1].strip().split('.')[0]
+            return description, file_name
+        else:
+            description = ''.join(line for line in text)
+            return description, None
+    else:
+        return None, None
 
 def load_text_options_asset(file_name):
     '''
@@ -32,25 +42,23 @@ def load_text_options_asset(file_name):
         2) next file
     '''
     path = os.path.join(text_path, file_name)
-    with open(path, 'r') as data:
-        text = data.readlines()
-
-    description = ''.join(line for line in text[:-1])
-    file_name = text[-1].strip().split('.')[0]
-    return description, file_name
-
-def load_language_module(file_name):
-    mapping = {}
-    path = os.path.join(text_path, file_name)
-    with open(path, 'r') as data:
-        for line in data:
-            for data_id, text in line.strip().split(','):
-                mapping[data_id] = text
-    return mapping
+    if os.path.exists(path):
+        with open(path, 'r') as data:
+            text = data.readlines()
+        if len(text) == 0:
+            return None, None
+        description = ''.join(line for line in text[:-1])
+        file_name = text[-1].strip().split('.')[0]
+        return description, file_name
+    else:
+        return None, None
 
 def load_image_asset(file_name):
     path = os.path.join(image_path, file_name)
-    return ImageTk.PhotoImage(file=path)
+    if os.path.exists(path):
+        return ImageTk.PhotoImage(file=path)
+    else:
+        return None
 
 def roll(num, d):
     total = 0

@@ -1,0 +1,2 @@
+Ignore and bury the tome. 
+wormstome.txt

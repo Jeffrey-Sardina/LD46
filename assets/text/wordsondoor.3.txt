@@ -1,0 +1,3 @@
+'Pray to me'
+
+entermaindoor.txt

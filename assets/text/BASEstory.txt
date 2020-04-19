@@ -3,7 +3,7 @@ opening.txt - A warm breeze washes over your face. It carries a strange, sweet g
 The warm breeze turned out to be the bearded figure's breath, emanating from a set of rotting teeth. The grassy aroma doesn't smell as sweet anymore.
 
 The begrizzled face pants, "Keep it... alive." He stands up, sniffs the air, and hobbles away, with his fur wrappings trailing behind him. Within moments, traces of the druid's presence disappeared. 
--------------------------
+
 afterdruid.txt - Only one thing was left behind, a large dusty tome with a peeling spine laid rest on your lap. You didn't feel it rest there. What do you do?
     1. afterdruidcommands.1.txt - Throw off your blanket and chase the druid.
         chaseafterdruid.txt - You cast off your bedroll blanket, causing the tome to tumble and its spine tear a bit more. You brandish your dirk and chase after the druid in the general direction he ran off. After a few moments of wildly missing and hitting branches, you slowly realize that it was a naught cause. You return to your bedsite, where you were resting on a journey to see your grandkin. What do you do?
@@ -16,24 +16,34 @@ afterdruid.txt - Only one thing was left behind, a large dusty tome with a peeli
 tome.txt - You leaf through the wavery pages, your fingerprints seem to leave behind oily marks that mar the pages. You repeatedly see figures of a large tree, seemingly with paths that criss-cross its trunk body. You get the impression this is a godly place.
 
 An yellowing attachment falls out from in between the pages. You take it and open it to reveal a map leading to the tree. It is not of the same ink nor handwriting as the tome. You configure your position depending on the map and see that it is of a strikingly close position to where you currently are. What do you do?
-    1. Pack up camp and head to the aforementioned tree.
-        You quickly figure out from your position in the meadow that the tree takes shape as the tallest tree in the region, with the tree canopy rising about an hour's hike away. You pack up and hike towards the tree.
-    2. Ignore and bury the tome. 
-        Over the years, worms and bacteria eat away at the tome, leaving it an indistinguishable mess. You lose. 
+    1. tome.1.txt - Pack up camp and head to the aforementioned tree.
+        findtree.txt - You quickly figure out from your position in the meadow that the tree takes shape as the tallest tree in the region, with the tree canopy rising about an hour's hike away. You pack up and hike towards the tree.
+    2. tome.2.txt - Ignore and bury the tome. 
+        wormstome.txt - Over the years, worms and bacteria eat away at the tome, leaving it an indistinguishable mess. You lose. 
 
-You follow the directions as indicated by the attachment, and with your adept tracking skills, you begin to see a web of faded, overgrown paths leading to the tree. There is a faded path leading up to the branch and another one leading to the body of the godly tree. What do you do?
-    1. Climb up onto the branch.
-        You clamber up onto the sturdy branch, and the only way it leads is to the tree trunk. You continue that way, up and up to near the canopy level. You approach a massive, cavernous hole in the trunk.
-    2. Continue onwards to the tree trunk. 
-        You continue onwards to the main body of the tree. As you approach, you see multitudes of pegs encroaching the main body in a ladder-like fashion. What do you do?
-            1. Go back to where the branch meets the ground.
-            2. Climb the ladders.
-                You climb the treacherous ladders. The pegs show wear from thousands of footsteps, but still show a layer of lichen, showing its disuse. You arrive at an intersection of a sturdy branch and a massive, cavernous hole in the trunk.
+hiketotree.txt (same as above) - You follow the directions as indicated by the attachment, and with your adept tracking skills, you begin to see a web of faded, overgrown paths leading to the tree. There is a faded path leading up to the branch and another one leading to the body of the godly tree. What do you do?
+    1. hiketotree.1.txt - Climb up onto the branch.
+        branchtoentrance.txt - You clamber up onto the sturdy branch, and the only way it leads is to the tree trunk. You continue that way, up and up to near the canopy level. You approach a massive, cavernous hole in the trunk.
+    2. hiketotree.2.txt - Continue onwards to the tree trunk. 
+        atbaseoftree.txt - You continue onwards to the main body of the tree. As you approach, you see multitudes of pegs encroaching the main body in a ladder-like fashion. What do you do?
+            1. atbaseoftree.1.txt - Go back to where the branch meets the ground.
+            2. atbaseoftree.2.txt - Climb the ladders.
+                climbtree.txt - You climb the treacherous ladders. The pegs show wear from thousands of footsteps, but still show a layer of lichen, showing its disuse. You arrive at an intersection of a sturdy branch and a massive, cavernous hole in the trunk.
 
-Your mouth drops as you realize the magnitude of this hole. It can easily fit an entire inn inside! Through two sets of steps leading downstairs, you see a landing with a regal carved door at the bottom.
+mouthdrop.txt - You climb the treacherous ladders. The pegs show wear from thousands of footsteps, but still show a layer of lichen, showing its disuse. You arrive at an intersection of a sturdy branch and a massive, cavernous hole in the trunk. Your mouth drops as you realize the magnitude of this hole. It can easily fit an entire inn inside! Through two sets of steps leading downstairs, you see a landing with a regal carved door at the bottom.
 
 You hold the wall as you step down the right side of the stairs, leading down to this majestic hall. You step into the center of the landing to take full sight of the door. 
                 
 The door, although made of the same stout material as the tree, looked steely. Depictions of weapons - spears, morningstars, and daggers enameled the door. Figures who held them had broad noses and jutting jaws, with canines exposed. Those figures held up their bodies and weapons proudly, leading the way up to the center of the door, where a veiled figure lay transcended above all. Rays shone from her. 
 
-Abo
+wordsondoor.txt - Above the priest-queen, you make out strings of symbols that resembles the languages of Thithwen and Paaldrin. The symbols spell out 'ibo' and 'isha'. You recognize those words, and open your tome. What do you make out the words to say?
+    1. wordsondoor.1.txt - 'Desire me'
+        silentdoor.txt - You hear nothing. The door is silent. 
+    2. wordsondoor.2.txt - 'War creates'
+        silentdoor.txt - You hear nothing. The door is silent.
+    3. wordsondoor.3.txt - 'Pray to me'
+        entermaindoor.txt - You rifle through the pages and arrive to the incomplete dictionary. You absentmindedly whisper, 'ibo'... 'isha'... You hear a click and a groaning sound coming from behind. You look back to the entrance from where you came from and freeze - the sides of the wooden hollow you went through bulges jarringly inwards, effectively closing your way out. A last ray of dappled sunlight tantalizes your face as the entrance closes with a final groan, leaving you paralyzed in the dark, mortified. 
+    4. wordsondoor.4.txt - 'Nothing is dead'
+       silentdoor.txt -  You hear nothing. The door is silent. 
+
+maindooropen.txt - 

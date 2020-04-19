@@ -4,4 +4,4 @@ The warm breeze turned out to be the bearded figure's breath, emanating from a s
 
 The begrizzled face pants, "Keep it... alive." He stands up, sniffs the air, and hobbles away, with his fur wrappings trailing behind him. Within moments, traces of the druid's presence disappeared. 
 
-What do you do?
+afterdruidcommands.txt
