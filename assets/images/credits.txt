@@ -1,1 +1,10 @@
 opening.jpg: Photo by Aziz Acharki on Unsplash
+splash.jpg: Photo by veeterzy from Pexels
+opentome.jpg: Photo by Wendy van Zyl from Pexels
+afterdruidcommands.jpg: https://publicdomainpictures.net/en/view-image.php?image=1841&picture=old-book
+tome.jpg: https://snappygoat.com/s/?q=map#72a048e678423e1dfb83cf15878b28f9516a6a1c,1,420.
+wormstome.jpg: Photo by Lukas from Pexels
+chaseafterdruid.jpg: Photo by Lucas Pezeta from Pexels
+decaytome.jpg: Photo by 雨星 ameboshi from Pexels
+findtree.jpg: Photo by Anton Atanasov from Pexels
+branchtoentrance.jpg: https://free-images.com/display/tree_forest_moss_landscape.html

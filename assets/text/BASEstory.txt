@@ -48,4 +48,32 @@ wordsondoor.txt - Above the priest-queen, you make out strings of symbols that r
 
 maindooropen.txt - In the blackness, you begin to be unable to feel your body. Your hand accidentally hits your cheek, and your knee surreptitously bowed, launching you face-forward to the floor matted with wooden fiber. Instantly, you hear a booming rasp that seemed to magnify exponentially as it continued.
 
-'
+'CCAIZHDI HAI FAI,
+ZHAIF MA'REZH RE-TAI,
+AEHLUB XIG ZAI-FAI;
+MA'IAGI IFST HAI NAE?'
+
+'We are Ccaizhdi,
+Bringer of necessary war,
+People among gods;
+what is your story?'
+
+What do you say? 
+    TEXTBOX
+
+maindooropensforreal.txt - As soon as you finish uttering your story, the door cracks in half and swings outward. A pillar of light appears and illuminates the sweat on your cheeks. You roll over and pathetically crawl on your elbows and knees towards the light. You put your head down and manage to make a considerable distance until you arrive at a patch that wasn't blinding. You look up and see a gargantuan pipe leading from above to a large lantern that was enclosed on all sides except one. You slowly realize that it was sunlight that was tunneled down the tree and mirrored out of the lantern.
+
+The technology just to tunnel down sunlight is unfathomable to you. You arise and stand there for a bit, scrutinizing the details of the contraption.
+
+firstpuzzle.txt - Satisfied with your survey, you turn and see a regal staircase leading down. Moss and thick root-like vines cover the stairs. It abruptly ends at the edge of another door. This one is normal-sized, oddly enough. It is made of white oak, meaning it is not of this tree. Above it, on its frame, rests a depiction of a tree. What do you do?
+    1. firstpuzzle.1.txt - Try the door knob.
+        nobudge.txt - It doesn't even budge. It feels like it is made of stone.
+    2. firstpuzzle.2.txt - Kick it down.
+        nobudge.txt - It doesn't even budge. It feels like it is made of stone.
+    3. firstpuzzle.3.txt - Utter something.
+        firstpuzzleutter.txt - What do you utter?
+            1. firstpuzzleutter.1.txt - 'Ccimhai'
+                firstpuzzleright.txt
+            2. firstpuzzleutter.2.txt - 'Zhaib'
+            3. firstpuzzleutter.3.txt - 'Ae'
+            4. firstpuzzleutter.4.txt - 'Ccae'

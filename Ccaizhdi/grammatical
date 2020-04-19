@@ -5,6 +5,7 @@ Word orders
     AN
     GN
     RN
+    AGN
 
 Stress
     Last syllable if it ends in a consonant; else second-to-last syllable
@@ -12,6 +13,7 @@ Stress
 Pronouns
     First-person assumed if no subject is given
     He and She are not distinguished in pronouns
+    2person plural is also 2nd person singular formal
 
     1s  bo
     1p  bai
@@ -100,3 +102,4 @@ Articles
 derivational morphology suffixes:
     who does (ie, "er"): -(t)ai
     the thing that cuases: -(')ae
+    verb to noun: -(e)f
