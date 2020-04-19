@@ -42,8 +42,10 @@ wordsondoor.txt - Above the priest-queen, you make out strings of symbols that r
     2. wordsondoor.2.txt - 'War creates'
         silentdoor.txt - You hear nothing. The door is silent.
     3. wordsondoor.3.txt - 'Pray to me'
-        entermaindoor.txt - You rifle through the pages and arrive to the incomplete dictionary. You absentmindedly whisper, 'ibo'... 'isha'... You hear a click and a groaning sound coming from behind. You look back to the entrance from where you came from and freeze - the sides of the wooden hollow you went through bulges jarringly inwards, effectively closing your way out. A last ray of dappled sunlight tantalizes your face as the entrance closes with a final groan, leaving you paralyzed in the dark, mortified. 
+        entermaindoor.txt - You rifle through the pages and arrive to the incomplete dictionary. You absentmindedly whisper, 'ibo'... 'isha'... You hear a click and a groaning sound coming from behind. You look back to the entrance from where you came from and freeze - the tree flesh on the sides of the entrance you had just went through splinters and engorges as sap rapidly oozes out of it. You remain planted on the sinewy floor, paralyzed at this unthinkable feat. A last ray of dappled sunlight tantalizes your face and disappears as the entrance closes with a final groan, sealing your fate.  
     4. wordsondoor.4.txt - 'Nothing is dead'
        silentdoor.txt -  You hear nothing. The door is silent. 
 
-maindooropen.txt - 
+maindooropen.txt - In the blackness, you begin to be unable to feel your body. Your hand accidentally hits your cheek, and your knee surreptitously bowed, launching you face-forward to the floor matted with wooden fiber. Instantly, you hear a booming rasp that seemed to magnify exponentially as it continued.
+
+'

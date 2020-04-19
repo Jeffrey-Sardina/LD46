@@ -69,7 +69,7 @@ def create_splash_page(container, *args, **kwargs):
     page = tk.Frame(container, *args, **kwargs)
 
     #Background
-    background_image = load_image_asset('splash.jpg')
+    background_image = load_image_asset('splash.jpg', screen_width, screen_height)
     background = tk.Label(page, image=background_image, background=back_color)
     background.image = background_image #Just to save the reference
     background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
@@ -100,7 +100,7 @@ def create_howto_page(container, *args, **kwargs):
     page = tk.Frame(container, *args, **kwargs)
 
     #Background
-    background_image = load_image_asset('temp.jpg')
+    background_image = load_image_asset('temp.jpg', screen_width, screen_height)
     background = tk.Label(page, image=background_image, background=back_color)
     background.image = background_image #Just to save the reference
     background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
@@ -111,9 +111,9 @@ def create_game_text_page(container, file_base_name, *args, **kwargs):
     page = tk.Frame(container, *args, **kwargs)
 
     #Background
-    background_image = load_image_asset(file_base_name + '.jpg')
+    background_image = load_image_asset(file_base_name + '.jpg', screen_width, screen_height)
     if not background_image:
-        background_image = load_image_asset('temp.jpg')
+        background_image = load_image_asset('temp.jpg', screen_width, screen_height)
     background = tk.Label(page, image=background_image, background=back_color)
     background.image = background_image #Just to save the reference
     background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
@@ -182,7 +182,7 @@ def create_end_page(container, *args, **kwargs):
     page = tk.Frame(container, *args, **kwargs)
 
     #Background
-    background_image = load_image_asset('temp.jpg')
+    background_image = load_image_asset('temp.jpg', screen_width, screen_height)
     background = tk.Label(page, image=background_image, background=back_color)
     background.image = background_image #Just to save the reference
     background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
