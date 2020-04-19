@@ -1,7 +1,4 @@
-import cv2
 import tkinter as tk
-from PIL import Image, ImageTk
-import random
 import sys
 from utils import *
 from player import Player
@@ -13,37 +10,10 @@ screen_width = 0
 screen_height = 0
 title_font_name = 'Old English Text MT'
 common_font_name = 'Courier'
-
-class Video_Displayer():
-    def __init__(self, video_name, display_area, width, height, is_training):
-        self.cap = load_video_asset(video_name)
-        self.display_area = display_area
-        self.width = width
-        self.height = height
-        self.is_training = is_training
-
-    def display(self):
-        is_reading, frame = self.cap.read()
-
-        if is_reading:
-            cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
-            img = Image.fromarray(cv2image)
-
-            img_width, img_height = dimensions_to_fill_space(img, self.width, self.height)
-            img = img.resize((int(img_width), int(img_height)))
-
-            imgtk = ImageTk.PhotoImage(image=img)
-            self.display_area.imgtk = imgtk
-            self.display_area.configure(image=imgtk)
-            self.display_area.after(10, self.display)
-        else:
-            self.cap.release()
-
-    def update(self, video_name):
-        self.cap = cv2.VideoCapture(video_name)
+container = None
 
 def main():
-    global ui_lang, screen_width, screen_height
+    global screen_width, screen_height, container
 
     #Create Outermost Window
     window = tk.Tk()
@@ -59,9 +29,7 @@ def main():
     window.geometry("%dx%d+0+0" % (screen_width, screen_height))
 
     #Create pages
-    pages['splash'] = create_splash_page(container, width=screen_width, height=screen_height)
-    pages['howto'] = create_howto_page(container, width=screen_width, height=screen_height)
-    pages['game_intro'] = create_game_intro_page(container, width=screen_width, height=screen_height)
+    load_pages()
 
     #Place pages in container such that all have the same relative size (ie, none show out from under others)
     for page_id in pages:
@@ -73,16 +41,28 @@ def main():
     #Start GUI Loop--control now in the hands of the UI
     window.mainloop()
 
+def load_pages():
+    #One-offs
+    pages['splash'] = create_splash_page(container, width=screen_width, height=screen_height)
+    pages['howto'] = create_howto_page(container, width=screen_width, height=screen_height)
+    pages['end'] = create_end_page(container, width=screen_width, height=screen_height)
+
+    #All screens in game
+    screens = description_text_files()
+    for screen_name in screens:
+        pages[screen_name] = create_game_text_page(container, screen_name, width=screen_width, height=screen_height)
+
 def show_page(to_show):
     for page_id in pages:
         pages[page_id].lower()
     pages[to_show].lift()
+    print(to_show)
 
 def create_splash_page(container, *args, **kwargs):
     page = tk.Frame(container, *args, **kwargs)
 
     #Background
-    background_image = load_image_asset('splash.jpeg')
+    background_image = load_image_asset('splash.jpg')
     background = tk.Label(page, image=background_image, background=back_color)
     background.image = background_image #Just to save the reference
     background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
@@ -114,17 +94,20 @@ def create_howto_page(container, *args, **kwargs):
 
     return page
 
-def create_game_intro_page(container, *args, **kwargs):
+def create_game_text_page(container, file_base_name, *args, **kwargs):
     page = tk.Frame(container, *args, **kwargs)
 
     #Background
-    background_image = load_image_asset('splash.jpeg')
+    try:
+        background_image = load_image_asset(file_base_name + '.jpg')
+    except:
+        background_image = load_image_asset('temp.jpg')
     background = tk.Label(page, image=background_image, background=back_color)
     background.image = background_image #Just to save the reference
     background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
 
     #Text
-    src = 'zz_temp.txt'
+    src = file_base_name + '.txt'
     text = load_text_asset(src)
     width = 4 * screen_width // 5
     label = tk.Label(background, text=text, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
@@ -139,6 +122,9 @@ def create_game_intro_page(container, *args, **kwargs):
         btn1.place(in_=background, x = screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
     except:
         more = False
+
+    if not more:
+        show_page('end')
 
     if more:
         try:
@@ -166,8 +152,13 @@ def create_game_intro_page(container, *args, **kwargs):
 
     return page
 
+def create_end_page(container, *args, **kwargs):
+    page = tk.Frame(container, *args, **kwargs)
+
+    return page
+
 def on_start():
-    show_page('game_intro')
+    show_page('zz_temp')
 
 def on_howto():
     show_page('howto')
@@ -176,7 +167,8 @@ def on_leave():
     sys.exit(0)
 
 def on_option(file_name):
-    print(file_name)
+    pages[file_name] = create_game_text_page(container, file_name, width=screen_width, height=screen_height)
+    show_page('howto')
 
 if __name__ == '__main__':
     main()

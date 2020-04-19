@@ -1,79 +1,62 @@
-import cv2
 from PIL import Image, ImageTk
 import random
+import glob
+import os
 
 #Constants
-text_path = 'assets/text/'
-image_path = 'assets/images/'
-video_path = 'assets/videos/'
+text_path = os.path.join('assets', 'text')
+image_path = os.path.join('assets', 'images')
+
+def description_text_files():
+    '''
+    Gets all text files in the form name.txt, but not name.<number>.txt
+    '''
+    path = os.path.join(text_path, '*.txt')
+    files = glob.glob(path)
+    return [os.path.basename(file_name).split('.')[0] for file_name in files if file_name.count('.') == 1]
+
 
 def load_text_asset(file_name):
-    '''Get all text in a file'''
-    with open(text_path + file_name, 'r') as data:
+    '''
+    Get all text in a file
+    '''
+    path = os.path.join(text_path, file_name)
+    with open(path, 'r') as data:
         text = data.read()
     return text
 
 def load_text_options_asset(file_name):
-    '''Get 2 strings
+    '''
+    Get 2 strings
         1) option description
         2) next file
     '''
-    with open(text_path + file_name, 'r') as data:
+    path = os.path.join(text_path, file_name)
+    with open(path, 'r') as data:
         text = data.readlines()
 
     description = ''.join(line for line in text[:-1])
-    file_name = text[-1].strip()
+    file_name = text[-1].strip().split('.')[0]
     return description, file_name
 
 def load_language_module(file_name):
     mapping = {}
-    with open(text_path + file_name, 'r') as data:
+    path = os.path.join(text_path, file_name)
+    with open(path, 'r') as data:
         for line in data:
             for data_id, text in line.strip().split(','):
                 mapping[data_id] = text
     return mapping
 
 def load_image_asset(file_name):
-    return ImageTk.PhotoImage(file=image_path + file_name)
-
-def load_video_asset(file_name):
-    return cv2.VideoCapture(video_path + file_name)
+    path = os.path.join(image_path, file_name)
+    return ImageTk.PhotoImage(file=path)
 
 def roll(num, d):
     total = 0
     for i in range(num):
         total += random.randint(1, d)
     return total
-
-def dimensions_to_fill_space(img, width, height):
-    '''
-    This method gets the largest-area resize of an image to be displayed onthe given dimensions
-    image to overflow off-screen. It maintains the image aspect ratio.
-    '''
-
-    #Get image dimensions
-    original_width = img.width
-    original_height = img.height
-
-    #Get the scalars that transform the original size into the fullscreen dize
-    width_scalar = width / original_width
-    height_scalar = height / original_height
-
-    #Make the image as large as possible without going over the screen size.
-    width_based_scaling_height = original_height * width_scalar
-    width_based_scaling_valid = True
-    if width_based_scaling_height > height:
-        width_based_scaling_valid = False
-    height_based_scaling_width = original_width * height_scalar
-    height_based_scaling_valid = True
-    if height_based_scaling_width > width:
-        height_based_scaling_valid = False
-
-    #Return the calculated dimensions
-    if width_based_scaling_valid and not height_based_scaling_valid:
-        return width, width_based_scaling_height
-    else:
-        return height_based_scaling_width, height
 
 def edit_distance(v, w):
     n = len(v) + 1
