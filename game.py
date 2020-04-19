@@ -2,10 +2,17 @@ import cv2
 import tkinter as tk
 from PIL import Image, ImageTk
 import random
+import sys
 from utils import *
 from player import Player
 
 pages = {}
+back_color = '#000000'
+fore_color = '#00ff00'
+screen_width = 0
+screen_height = 0
+title_font_name = 'Old English Text MT'
+common_font_name = 'Courier'
 
 class Video_Displayer():
     def __init__(self, video_name, display_area, width, height, is_training):
@@ -36,6 +43,8 @@ class Video_Displayer():
         self.cap = cv2.VideoCapture(video_name)
 
 def main():
+    global ui_lang, screen_width, screen_height
+
     #Create Outermost Window
     window = tk.Tk()
     window.title('Game')
@@ -51,7 +60,8 @@ def main():
 
     #Create pages
     pages['splash'] = create_splash_page(container, width=screen_width, height=screen_height)
-    pages['game'] = None
+    pages['howto'] = create_howto_page(container, width=screen_width, height=screen_height)
+    pages['game_intro'] = create_game_intro_page(container, width=screen_width, height=screen_height)
 
     #Place pages in container such that all have the same relative size (ie, none show out from under others)
     for page_id in pages:
@@ -69,22 +79,84 @@ def show_page(to_show):
     pages[to_show].lift()
 
 def create_splash_page(container, *args, **kwargs):
-    consent_page = tk.Frame(container, *args, **kwargs)
+    page = tk.Frame(container, *args, **kwargs)
 
-    consent_text = load_text_asset('assets/consent.txt')
+    #Background
+    background_image = load_image_asset('splash.jpeg')
+    background = tk.Label(page, image=background_image, background=back_color)
+    background.image = background_image #Just to save the reference
+    background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
 
-    consent_message = tk.Text(consent_page, width = 110, height = 20)
-    consent_message.insert(tk.INSERT, consent_text)
-    consent_message.config(state = 'disabled')
-    consent_message.grid(row=0, column=0)
+    #Title
+    title = tk.Label(background, text='Our Game', background=back_color, foreground=fore_color, font=(title_font_name, 42))
+    width = screen_width // 7
+    title.place(in_=background, x = screen_width // 2 - width // 2, y = screen_height // 10, width = width)
 
-    consent_button = tk.Button(consent_page, text='I consent', command=on_consent)
-    consent_button.grid(row=1, column=0)
+    #Start
+    start = tk.Button(background, text='Begin Quest!', command=on_start, background=back_color, foreground=fore_color, font=(title_font_name, 23))
+    width = screen_width // 7
+    start.place(in_=background, x = screen_width // 3 - width // 2, y = 3 * screen_height // 4, width = width)
 
-    return consent_page
+    #How to Play
+    howto = tk.Button(background, text='Training Grounds', command=on_howto, background=back_color, foreground=fore_color, font=(title_font_name, 23))
+    width = screen_width // 7
+    howto.place(in_=background, x = screen_width // 2 - width // 2, y = 2 * screen_height // 3, width = width)
 
-def main():
-    pass
+    #Exit
+    leave = tk.Button(background, text="Cowards' Way Out", command=on_leave, background=back_color, foreground=fore_color, font=(title_font_name, 23))
+    width = screen_width // 7
+    leave.place(in_=background, x = 2 * screen_width // 3 - width // 2, y = 3 * screen_height // 4, width = width)
+
+    return page
+
+def create_howto_page(container, *args, **kwargs):
+    page = tk.Frame(container, *args, **kwargs)
+
+    return page
+
+def create_game_intro_page(container, *args, **kwargs):
+    page = tk.Frame(container, *args, **kwargs)
+
+    #Background
+    background_image = load_image_asset('splash.jpeg')
+    background = tk.Label(page, image=background_image, background=back_color)
+    background.image = background_image #Just to save the reference
+    background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
+
+    #Text
+    text = load_text_asset('temp.txt')
+    width = 4 * screen_width // 5
+    label = tk.Label(background, text=text, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
+    label.place(in_=background, x = screen_width // 2 - width // 2, y = 5 * screen_height // 10, width = width, height = 3 * screen_height // 10)
+
+    #B1
+    text = load_text_asset('temp.1.txt')
+    width = screen_width // 10
+    btn1 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
+    btn1.place(in_=background, x = screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
+
+    text = load_text_asset('temp.1.txt')
+    btn2 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
+    btn2.place(in_=background, x = 2 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
+
+    text = load_text_asset('temp.1.txt')
+    btn3 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
+    btn3.place(in_=background, x = 3 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
+
+    text = load_text_asset('temp.1.txt')
+    btn4 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(common_font_name, 17))
+    btn4.place(in_=background, x = 4 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
+
+    return page
+
+def on_start():
+    show_page('game_intro')
+
+def on_howto():
+    show_page('howto')
+
+def on_leave():
+    sys.exit(0)
 
 if __name__ == '__main__':
     main()

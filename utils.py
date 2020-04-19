@@ -12,6 +12,14 @@ def load_text_asset(file_name):
         text = data.read()
     return text
 
+def load_language_module(file_name):
+    mapping = {}
+    with open(text_path + file_name, 'r') as data:
+        for line in data:
+            for data_id, text in line.strip().split(','):
+                mapping[data_id] = text
+    return mapping
+
 def load_image_asset(file_name):
     return ImageTk.PhotoImage(file=image_path + file_name)
 
