@@ -73,7 +73,7 @@ firstpuzzle.txt - Satisfied with your survey, you turn and see a regal staircase
     3. firstpuzzle.3.txt - Utter something.
         firstpuzzleutter.txt - What do you utter?
             1. firstpuzzleutter.1.txt - 'Ccimhai'
-                firstpuzzleright.txt - 
+                firstpuzzleright.txt - You utter the Ccaizhdi word for tree and are taken aback by a resounding BOOM. The door in front of you fell forward to reveal an even smaller door several steps away. There are braziers lining the hallway. 
             2. firstpuzzleutter.2.txt - 'Zhaib'
                 firstpuzzlewrong.txt - You utter the word. Silence looms over you as stand at the bottom of the stairs. All of a sudden, a wall of water erupts from the top of the stairs and torrents down the stairs towards your defenseless body, ultimately ramming you against the door. You bruise your knees. You lose 1 HP.
             3. firstpuzzleutter.3.txt - 'Ae'
@@ -81,4 +81,44 @@ firstpuzzle.txt - Satisfied with your survey, you turn and see a regal staircase
             4. firstpuzzleutter.4.txt - 'Ccae'
                 firstpuzzlewrong.txt - You utter the word. Silence looms over you as stand at the bottom of the stairs. All of a sudden, a wall of water erupts from the top of the stairs and torrents down the stairs towards your defenseless body, ultimately ramming you against the door. You bruise your knees. You lose 1 HP.
 
-firstpuzzleright.txt - 
+secondpuzzle.txt - The smaller door is painted a dark, slick black. However the firelight flickering on the door revealed its redness. You realize that the door was painted with blood. Hopefully not of halflings like you. 
+
+The door doesn't have any knob nor does it look like it opens like a regular hinged door. There seems to be no obvious symbology of any kind. What do you do? 
+    1. secondpuzzle.1.txt - Gaze into the brazier.
+        gazebrazier.txt - You let your eyes relax and go into a trance gazing at the brazier. You let your body relax and lean slowly into the brazier. You snap out of the trance as soon as you feel the brazier edge singing against the skin on your chest. It had burned through your clothes! You lose 1 HP.
+    2. secondpuzzle.2.txt - Sit down in the hallway and wait for death to come.
+        waitfordeath.txt - You sit down in the hallway and whimper for death. The knowledge contained in the tome dies with your last heart beat. You lose.
+    3. secondpuzzle.3.txt - Scrape the blood off the door with your dirk.
+        scrapeblood.txt - You take out your prized dirk and sink it into the blood paint. It is at least an inch thick. You hope desperately that this is just the blood of creatures and monstrosities, not of intelligent creatures like you. You pull down, and the blood squelches and rolls down somewhat neatly. This reveals a pattern of three tokens with different symbols on them lined vertically on the left. At the bottom of all is a horizontal configuration of three other tokens with different symbols on each. You quickly figure out that the horizontal tokens are able to be moved into the empty slots directly opposing the vertically lined tokens. 
+    4. secondpuzzle.4.txt - Utter something.
+        secondpuzzleutter.txt - What do you utter?
+            1. secondpuzzleutter.1.txt - 'Ñomheb'
+            2. secondpuzzleutter.2.txt - 'Ix'
+            3. secondpuzzleutter.3.txt - 'Igo hluf bo'
+            4. secondpuzzleutter.4.txt - 'Hozhxizh'
+        secondpuzzleutterall.txt - You utter the word. Nothing happens. You feel like a fool. 
+
+secondpuzzletokens.txt - The three vertical tokens listed on the left read: 'HLE', 'ZAI', 'CCIMHAI'. The moveable horizontal tokens read: 'XAEX', 'PAE', 'AEHLUB'. You guess that the three empty token slots opposing the vertical slots can be filled by the moveable horizontal slots. In what order do you place them, from top to bottom?
+    1. secondpuzzletokens.1.txt - 'PAE', 'AEHLUB', 'CCIMHAI'
+        secondpuzzletokenright.txt - You arrange the tokens in their respective order. As the last token slid into place, you feel warmth emanating from the tokens and an invisible mechanism in the door turns the tokens. The door simply fades into non-existence. You wave your hand past the plane of the door and it passes. You tentatively try with your foot, and it likewise passes. You step past the doorway. There is yet another set of stairs leading down, this time, the stairs are made of caustic and austere stone. They're almost slippery.
+    2. secondpuzzletokens.2.txt - 'AEHLUB', 'PAE', 'CCIMHAI'
+        secondpuzzletokenwrong.txt - You arrange the tokens in their respective order. Or so you thought. Your feet sense a massive shift of the floor. You look down just in time as you are swallowed by a tight slide. Your body torpedoes through the tunnel, which vomits you right back at the landing, before the wooden door with the armed figures. The entrance from outside is still closed. 
+            wordsondoor.txt
+    3. secondpuzzletokens.3.txt - 'CCIMHAI', 'PAE', 'AEHLUB'
+        secondpuzzletokenwrong.txt - You arrange the tokens in their respective order. Or so you thought. Your feet sense a massive shift of the floor. You look down just in time as you are swallowed by a tight slide. Your body torpedoes through the tunnel, which vomits you right back at the landing, before the wooden door with the armed figures. The entrance from outside is still closed. 
+            wordsondoor.txt
+    4. secondpuzzletokens.4.txt - 'AEHLUB', 'CCIMHAI', 'PAE'
+        secondpuzzletokenwrong.txt - You arrange the tokens in their respective order. Or so you thought. Your feet sense a massive shift of the floor. You look down just in time as you are swallowed by a tight slide. Your body torpedoes through the tunnel, which vomits you right back at the landing, before the wooden door with the armed figures. The entrance from outside is still closed. 
+            wordsondoor.txt
+
+beforethirdpuzzle.txt - After a length of time that causes you feeling like you would step down into eternity, you arrive at a short hallway leading to a large room. You step into the room and observe your surroundings. Your heart skips a beat.
+
+What you see is essentially a bridge. The sides of the path fade into nothingness. You reckon if you fell one way or another, you wouldn't die. You would just fall, fall, fall, and fall until you die of starvation. The lifeless husk of your body would just keep falling ad infinitum.
+
+thirdpuzzle.txt - You shake off that wild imagination and perceive that the bridge is made of hexagonal tiles connecting to each other. You again see some symbology on them, but they're too far to read. Your eyes attempt to peruse, landing at your feet, where a Ccaizhdi statement lies, 'MA'IBAI XURAG HAI NAE?' What do you do?
+    1. thirdpuzzle.1.txt - Step on the tile that says 'Faeb'.
+        thirdpuzzlefirsttilewrong.txt - You step on the tile. The tile slowly glows into a reddish color. You stand mystified until you feel your soles heating up. You shriek and jump back. You lose 1 HP. 
+    2. thirdpuzzle.2.txt - Step on the tile that says 'Gazh'.
+        thirdpuzzlefirsttileright.txt - You step on the tile. Nothing happens.
+    3. thirdpuzzle.3.txt - Step on the tile that says 'Hi'.
+        thirdpuzzlefirsttilewrong.txt - You step on the tile. The tile slowly glows into a reddish color. You stand mystified until you feel your soles heating up. You shriek and jump back. You lose 1 HP. 

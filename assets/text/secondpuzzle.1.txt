@@ -1,0 +1,2 @@
+Gaze into the brazier.
+gazebrazier.txt

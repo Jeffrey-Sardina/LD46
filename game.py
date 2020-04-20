@@ -12,7 +12,7 @@ screen_height = 0
 container = None
 start_file = 'opening'
 title_font_name = 'Old English Text MT'
-common_font_name = 'Courier'
+common_font_name = 'Georgia'
 hp = None
 
 def main():

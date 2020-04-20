@@ -1,0 +1,1 @@
+The three vertical tokens listed on the left read: 'HLE', 'ZAI', 'CCIMHAI'. The moveable horizontal tokens read: 'XAEX', 'PAE', 'AEHLUB'. You guess that the three empty token slots opposing the vertical slots can be filled by the moveable horizontal slots. In what order do you place them, from top to bottom?

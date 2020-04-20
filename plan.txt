@@ -10,7 +10,7 @@ Puzzle ideas:
     Present an object that matches the word printed on an altar/archway/door to activate it
     Find a common parameter across words 
     Create a name for themselves, swear fealty to that language's cult
-    Connect semantically similar words (provided a dictionary)
+    2. Connect semantically similar words (provided a dictionary)
     1. Utter a word that matches the picture on an altar/archway/door to activate it
     Jump only on the tiles that match a specific criteria (i.e. those with 3rd person subjects)
     Arrange tokens with words on them to create sentences commanding the door/whatever to Open

@@ -1,0 +1,2 @@
+Step on the tile that says 'Hi'.
+thirdpuzzlefirsttilewrong.txt
