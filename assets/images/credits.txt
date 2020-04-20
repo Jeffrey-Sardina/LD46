@@ -17,3 +17,12 @@ training.jpg: Photo by Rene Asmussen from Pexels
 tome_icon.jpg: https://pixabay.com/illustrations/book-old-clouds-tree-birds-bank-863418/
 paper.jpg: https://pixabay.com/illustrations/vintage-old-used-paper-texture-1659117/
 arrow.jpg: https://pixabay.com/vectors/arrow-bow-old-shoot-weapon-150966/
+firstpuzzleright.jpg: https://www.pexels.com/photo/empty-corridor-60573/
+secondpuzzle.jpg: https://free-images.com/display/door_old_old_door_0.html
+waitgordeath.jpg: Photo by Skitterphoto from Pexels
+gazebrazier.jpg: Photo by Lum3n from Pexels
+secondpuzzletokenright.jpg: https://pixabay.com/photos/concrete-outdoors-plants-stairs-1837008/
+secondpuzzletokenwrong.jpg: https://free-images.com/display/earthquake_rubble_l_aquila_2.html
+beforethirdpuzzle.jpg: Photo by Tyler Lastovich from Pexels, editted
+thirdpuzzlefirsttilewrong.jpg: https://pixabay.com/photos/fire-wood-fire-flame-burn-brand-171229/
+haifnix.jpg: https://pixabay.com/photos/stone-wall-doorway-vines-moss-72277/
