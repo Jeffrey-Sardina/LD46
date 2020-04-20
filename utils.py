@@ -8,9 +8,24 @@ import re
 text_path = os.path.join('assets', 'text')
 image_path = os.path.join('assets', 'images')
 
+def tome_texts():
+    tome_pages = []
+    for file_name in tome_text_files():
+        text, _ = load_text_asset(file_name)
+        tome_pages.append(text)
+    return tome_pages
+
+def tome_text_files():
+    '''
+    Returns all text files holding tome data
+    '''
+    path = os.path.join(text_path, 'tome_entry_*.txt')
+    return [os.path.basename(file_name) for file_name in glob.glob(path)]
+
 def description_text_files():
     '''
     Gets all text files in the form name.txt, but not name.<number>.txt
+    .txt extension is not returned
     '''
     path = os.path.join(text_path, '*.txt')
     files = glob.glob(path)

@@ -5,8 +5,10 @@ from utils import *
 
 #General global variable
 pages = {}
+tome = []
 back_color = '#000000'
 fore_color = '#00ff00'
+tome_text_color = '#000000'
 screen_width = 0
 screen_height = 0
 container = None
@@ -248,13 +250,37 @@ def on_option(file_name):
     show_page(file_name)
 
 def on_tome_button():
-    window = tk.Toplevel()
-    window.wm_title("Druidic Tome")
+    sub_window = tk.Toplevel()
+    sub_window.wm_title("Druidic Tome")
 
+    sub_container = tk.Frame(sub_window)
+    sub_container.pack(side="top", fill="both", expand=True)
+
+    tome_pages = tome_texts()
+    for tome_page in sorted(tome_pages):
+        tome.append(generate_tome_page(sub_container, tome_page))
+
+    show_tome_page(0)
+
+def generate_tome_page(sub_container, text, *args, **kwargs):
+    page = tk.Frame(sub_container, *args, **kwargs)
+
+    #Background image
     background_image = load_image_asset('paper.jpg', screen_width, screen_height)
-    background = tk.Label(window, image=background_image, background=back_color)
+    background = tk.Label(sub_container, text=text, image=background_image, compound=tk.CENTER, background=back_color, foreground = tome_text_color, font=(title_font_name, 27))
     background.image = background_image #Just to save the reference
-    background.place(in_=window, x=0, y=0, relwidth=1, relheight=1)
+    background.place(in_=sub_container, x=0, y=0, relwidth=1, relheight=1)
+
+    return page
+
+def show_tome_page(number):
+    if number < len(tome):
+        for tome_page in tome:
+            tome_page.lower()
+        tome[number].lift()
+
+def on_tome_page_change():
+    pass
 
 if __name__ == '__main__':
     main()
