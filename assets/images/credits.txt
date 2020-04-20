@@ -13,3 +13,4 @@ wordsondoor.jpg: Photo by Nicole Avagliano from Pexels, modified
 maindooropensforreal.jpg: https://publicdomainpictures.net/en/view-image.php?image=19660&picture=into-the-tunnel
 firstpuzzle.jpg: Photo by BRUNO CERVERA on Unsplash
 firstpuzzlewrong.jpg: Photo by Ray Bilcliff from Pexels
+training.jpg: Photo by Rene Asmussen from Pexels

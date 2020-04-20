@@ -13,9 +13,10 @@ container = None
 start_file = 'opening'
 title_font_name = 'Old English Text MT'
 common_font_name = 'Courier'
+hp = None
 
 def main():
-    global screen_width, screen_height, container
+    global screen_width, screen_height, container, hp
 
     #Create Outermost Window
     window = tk.Tk()
@@ -30,13 +31,12 @@ def main():
     screen_height = window.winfo_screenheight()
     window.geometry("%dx%d+0+0" % (screen_width, screen_height))
 
+    #Player data
+    hp = tk.StringVar()
+    hp.set('Health: 4')
+
     #Create pages
     load_pages()
-
-    print('------------------')
-    for key in pages:
-        print(key)
-    print('------------------')
 
     #Place pages in container such that all have the same relative size (ie, none show out from under others)
     for page_id in pages:
@@ -51,7 +51,7 @@ def main():
 def load_pages():
     #One-offs
     pages['splash'] = create_splash_page(container, width=screen_width, height=screen_height)
-    pages['howto'] = create_howto_page(container, width=screen_width, height=screen_height)
+    pages['howto'] = create_howto_page(container, 'training', width=screen_width, height=screen_height)
     pages['end'] = create_end_page(container, width=screen_width, height=screen_height)
 
     #All screens in game
@@ -96,14 +96,32 @@ def create_splash_page(container, *args, **kwargs):
 
     return page
 
-def create_howto_page(container, *args, **kwargs):
+def create_howto_page(container, file_base_name, *args, **kwargs):
     page = tk.Frame(container, *args, **kwargs)
 
     #Background
-    background_image = load_image_asset('temp.jpg', screen_width, screen_height)
+    background_image = load_image_asset('training.jpg', screen_width, screen_height)
     background = tk.Label(page, image=background_image, background=back_color)
     background.image = background_image #Just to save the reference
     background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
+
+    #Title
+    title = tk.Label(background, text='Training Grounds', background=back_color, foreground=fore_color, font=(title_font_name, 42))
+    width = 2 * screen_width // 7
+    title.place(in_=background, x = screen_width // 2 - width // 2, y = screen_height // 10, width = width)
+
+    #Main Text
+    src = file_base_name + '.txt'
+    text, _ = load_text_asset(src)
+    width = 4 * screen_width // 5
+    label = tk.Label(background, text=text, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
+    label.place(in_=background, x = screen_width // 2 - width // 2, y = 6 * screen_height // 10, width = width, height = 3 * screen_height // 10)
+
+    #Back
+    width = screen_width // 15
+    text = 'Back'
+    btn1 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(title_font_name, 17), wraplength=width, command=lambda:on_option('splash'))
+    btn1.place(in_=background, x = 0, y = 9 * screen_height // 10, width=width, height = screen_height // 15)
 
     return page
 
@@ -124,6 +142,12 @@ def create_game_text_page(container, file_base_name, *args, **kwargs):
     width = 4 * screen_width // 5
     label = tk.Label(background, text=text, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
     label.place(in_=background, x = screen_width // 2 - width // 2, y = 5 * screen_height // 10, width = width, height = 3 * screen_height // 10)
+
+    #Health
+    width = screen_width // 15
+    height = screen_height // 10
+    label = tk.Label(background, textvariable=hp, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
+    label.place(in_=background, x = 0, y = 0, width = width, height = height)
 
     if next_file:
         gen_next_button(background, next_file)
