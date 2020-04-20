@@ -1,0 +1,2 @@
+You step on the center tile. Nothing happens. There are three other tiles in front of you. 
+thirdpuzzlesecondtile.txt

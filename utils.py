@@ -2,6 +2,7 @@ from PIL import Image, ImageTk
 import random
 import glob
 import os
+import re
 
 #Constants
 text_path = os.path.join('assets', 'text')
@@ -32,24 +33,6 @@ def load_text_asset(file_name):
         else:
             description = ''.join(line for line in text)
             return description, None
-    else:
-        return None, None
-
-def load_text_options_asset(file_name):
-    '''
-    Get 2 strings
-        1) option description
-        2) next file
-    '''
-    path = os.path.join(text_path, file_name)
-    if os.path.exists(path):
-        with open(path, 'r') as data:
-            text = data.readlines()
-        if len(text) == 0:
-            return None, None
-        description = ''.join(line for line in text[:-1])
-        file_name = text[-1].strip().split('.')[0]
-        return description, file_name
     else:
         return None, None
 

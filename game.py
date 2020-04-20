@@ -3,7 +3,9 @@ from tkinter import font
 import sys
 from utils import *
 from player import Player
+import meta
 
+#General global variable
 pages = {}
 back_color = '#000000'
 fore_color = '#00ff00'
@@ -13,10 +15,17 @@ container = None
 start_file = 'opening'
 title_font_name = 'Old English Text MT'
 common_font_name = 'Georgia'
-hp = None
+
+#Player dadta
+hp_tk = None
+hp_prefix = 'Health: '
+hp_val = 10
+
+#Precompute this using meta.py
+hp_change_pages = {'afterdruidcommands': 0, 'atbaseoftree': 0, 'BASEstory': -1, 'beforethirdpuzzle': 0, 'branchtoentrance': 0, 'chaseafterdruid': 0, 'climbtree': 0, 'decaytome': 0, 'entermaindoor': 0, 'findtree': 0, 'firstpuzzle': 0, 'firstpuzzleright': 0, 'firstpuzzleutter': 0, 'firstpuzzlewrong': -1, 'hiketotree': 0, 'introduction': 0, 'maindooropen': 0, 'maindooropensforreal': 0, 'mouthdrop': 0, 'nobudge': 0, 'opening': 0, 'opentome': 0, 'scrapeblood': 0, 'secondpuzzle': 0, 'secondpuzzletokenright': 0, 'secondpuzzletokens': 0, 'secondpuzzleutter': 0, 'secondpuzzleutterall': 0, 'silentdoor': 0, 'thirdpuzzle': 0, 'thirdpuzzlefirsttileright': 0, 'thirdpuzzlefirsttilewrong': -1, 'tome': 0, 'training': 0, 'waitfordeath': 0, 'wordsondoor': 0, 'wormstome': 0}
 
 def main():
-    global screen_width, screen_height, container, hp
+    global screen_width, screen_height, container, hp_tk
 
     #Create Outermost Window
     window = tk.Tk()
@@ -32,8 +41,8 @@ def main():
     window.geometry("%dx%d+0+0" % (screen_width, screen_height))
 
     #Player data
-    hp = tk.StringVar()
-    hp.set('Health: 4')
+    hp_tk = tk.StringVar()
+    hp_tk.set(hp_prefix + str(hp_val))
 
     #Create pages
     load_pages()
@@ -146,7 +155,7 @@ def create_game_text_page(container, file_base_name, *args, **kwargs):
     #Health
     width = screen_width // 15
     height = screen_height // 10
-    label = tk.Label(background, textvariable=hp, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
+    label = tk.Label(background, textvariable=hp_tk, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
     label.place(in_=background, x = 0, y = 0, width = width, height = height)
 
     if next_file:
@@ -167,7 +176,7 @@ def gen_game_buttons(page, background, src):
     more = True
     width = 0.19 * screen_width
     file_base_name = src.split('.')[0]
-    text1, file_name1 = load_text_options_asset(file_base_name + '.1.txt')
+    text1, file_name1 = load_text_asset(file_base_name + '.1.txt')
     command = lambda:on_option(file_name1)
     if not text1:
         text1 = 'End Game'
@@ -179,7 +188,7 @@ def gen_game_buttons(page, background, src):
     
     #Make the other buttons as long as there are options
     if more:
-        text2, file_name2 = load_text_options_asset(file_base_name + '.2.txt')
+        text2, file_name2 = load_text_asset(file_base_name + '.2.txt')
         if text2:
             btn2 = tk.Button(background, text=text2, background=back_color, foreground = fore_color, font=(common_font_name, 17), wraplength=width, command=lambda:on_option(file_name2))
             btn2.place(in_=background, x = 2 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
@@ -187,7 +196,7 @@ def gen_game_buttons(page, background, src):
             more = False
 
     if more:
-        text3, file_name3 = load_text_options_asset(file_base_name + '.3.txt')
+        text3, file_name3 = load_text_asset(file_base_name + '.3.txt')
         if text3:
             btn3 = tk.Button(background, text=text3, background=back_color, foreground = fore_color, font=(common_font_name, 17), wraplength=width, command=lambda:on_option(file_name3))
             btn3.place(in_=background, x = 3 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
@@ -195,7 +204,7 @@ def gen_game_buttons(page, background, src):
             more = False
 
     if more:
-        text4, file_name4 = load_text_options_asset(file_base_name + '.4.txt')
+        text4, file_name4 = load_text_asset(file_base_name + '.4.txt')
         if text4:
             btn4 = tk.Button(background, text=text4, background=back_color, foreground = fore_color, font=(common_font_name, 17), wraplength=width, command=lambda:on_option(file_name4))
             btn4.place(in_=background, x = 4 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
@@ -223,6 +232,9 @@ def on_leave():
     sys.exit(0)
 
 def on_option(file_name):
+    global hp_val
+    hp_val += hp_change_pages[file_name]
+    hp_tk.set(hp_prefix + str(hp_val))
     show_page(file_name)
 
 if __name__ == '__main__':
