@@ -15,4 +15,5 @@ firstpuzzle.jpg: Photo by BRUNO CERVERA on Unsplash
 firstpuzzlewrong.jpg: Photo by Ray Bilcliff from Pexels
 training.jpg: Photo by Rene Asmussen from Pexels
 tome_icon.jpg: https://pixabay.com/illustrations/book-old-clouds-tree-birds-bank-863418/
-paper.jpg: https://pixabay.com/illustrations/old-page-paper-vintage-antique-953394/
+paper.jpg: https://pixabay.com/illustrations/vintage-old-used-paper-texture-1659117/
+arrow.jpg: https://pixabay.com/vectors/arrow-bow-old-shoot-weapon-150966/

@@ -10,7 +10,8 @@ image_path = os.path.join('assets', 'images')
 
 def tome_texts():
     tome_pages = []
-    for file_name in tome_text_files():
+    time_files = tome_text_files()
+    for file_name in time_files:
         text, _ = load_text_asset(file_name)
         tome_pages.append(text)
     return tome_pages

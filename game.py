@@ -5,7 +5,6 @@ from utils import *
 
 #General global variable
 pages = {}
-tome = []
 back_color = '#000000'
 fore_color = '#00ff00'
 tome_text_color = '#000000'
@@ -15,6 +14,11 @@ container = None
 start_file = 'opening'
 title_font_name = 'Old English Text MT'
 common_font_name = 'Georgia'
+tome_created = False
+sub_window = None #Window for time
+tome_text = None
+tome_idx = 0
+tome_pages = None
 
 #Player dadta
 hp_tk = None
@@ -250,19 +254,35 @@ def on_option(file_name):
     show_page(file_name)
 
 def on_tome_button():
-    sub_window = tk.Toplevel()
-    sub_window.wm_title("Druidic Tome")
+    global tome_created, sub_window, tome_text, tome_pages
+    if not tome_created:
+        sub_window = tk.Toplevel()
+        sub_window.wm_title("Druidic Tome")
 
-    sub_container = tk.Frame(sub_window)
-    sub_container.pack(side="top", fill="both", expand=True)
+        sub_window.geometry("%dx%d+0+0" % (screen_width // 3, screen_height // 3))
 
-    tome_pages = tome_texts()
-    for tome_page in sorted(tome_pages):
-        tome.append(generate_tome_page(sub_container, tome_page))
+        '''sub_container = tk.Frame(sub_window)
+        sub_container.pack(side="top", fill="both", expand=True)'''
 
-    show_tome_page(0)
+        tome_pages = tome_texts()
+        tome_text = tk.StringVar()
+        tome_text.set(tome_pages[tome_idx])
 
-def generate_tome_page(sub_container, text, *args, **kwargs):
+        #Background image
+        background_image = load_image_asset('paper.jpg', screen_width, screen_height)
+        background = tk.Label(sub_window, textvariable=tome_text, image=background_image, compound=tk.CENTER, background=back_color, foreground = tome_text_color, font=(title_font_name, 27))
+        background.image = background_image #Just to save the reference
+        background.place(in_=sub_window, x=0, y=0, relwidth=1, relheight=1)
+
+        #Arrows
+        gen_left_arrow(background)
+        gen_right_arrow(background)
+
+        tome_created = True
+    else:
+        sub_window.lift()
+
+def generate_tome_page(sub_container, text, num, end, *args, **kwargs):
     page = tk.Frame(sub_container, *args, **kwargs)
 
     #Background image
@@ -271,16 +291,35 @@ def generate_tome_page(sub_container, text, *args, **kwargs):
     background.image = background_image #Just to save the reference
     background.place(in_=sub_container, x=0, y=0, relwidth=1, relheight=1)
 
+    #Arrows
+    if num != 0:
+        gen_left_arrow(background, num)
+    if num != end:
+        gen_right_arrow(background, num)
+
     return page
 
-def show_tome_page(number):
-    if number < len(tome):
-        for tome_page in tome:
-            tome_page.lower()
-        tome[number].lift()
+def gen_left_arrow(background):
+    text = '<'
+    width = screen_width // 15
+    height = screen_height // 15
+    tome_left_arrow = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(title_font_name, 27), command=lambda:show_tome_page(tome_idx-1))
+    tome_left_arrow.pack(side=tk.LEFT)
 
-def on_tome_page_change():
-    pass
+def gen_right_arrow(background):
+    text = '>'
+    width = screen_width // 15
+    height = screen_height // 15
+    tome_right_arrow = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(title_font_name, 27), command=lambda:show_tome_page(tome_idx+1))
+    tome_right_arrow.pack(side=tk.RIGHT)
+
+def show_tome_page(number):
+    global tome_idx
+    if number >= 0 and number < len(tome_pages):
+        tome_idx = number
+        tome_text.set(tome_pages[tome_idx])
+    else:
+        print('err: ', number)
 
 if __name__ == '__main__':
     main()
