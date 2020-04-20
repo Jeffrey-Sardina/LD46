@@ -1,2 +1,2 @@
-Step on the tile that says 'Uzhmim'
+Step on the tile that says 'Uzhmim'.
 thirdpuzzlesecondtileright.txt

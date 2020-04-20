@@ -1,0 +1,2 @@
+Step on the tile that says 'Haifnix'.
+haifnix.txt

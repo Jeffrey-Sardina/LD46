@@ -1,2 +1,2 @@
-Step on the tile that says 'Mae'
+Step on the tile that says 'Mae'.
 thirdpuzzlesecondtilewrong.txt

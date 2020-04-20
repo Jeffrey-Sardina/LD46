@@ -2,8 +2,6 @@ import tkinter as tk
 from tkinter import font
 import sys
 from utils import *
-from player import Player
-import meta
 
 #General global variable
 pages = {}
@@ -21,7 +19,7 @@ hp_tk = None
 hp_prefix = 'Health: '
 hp_val = 10
 
-#Precompute this using meta.py
+#Precompute this using meta.py before each build
 hp_change_pages = {'afterdruidcommands': 0, 'atbaseoftree': 0, 'BASEstory': -1, 'beforethirdpuzzle': 0, 'branchtoentrance': 0, 'chaseafterdruid': 0, 'climbtree': 0, 'decaytome': 0, 'entermaindoor': 0, 'findtree': 0, 'firstpuzzle': 0, 'firstpuzzleright': 0, 'firstpuzzleutter': 0, 'firstpuzzlewrong': -1, 'hiketotree': 0, 'introduction': 0, 'maindooropen': 0, 'maindooropensforreal': 0, 'mouthdrop': 0, 'nobudge': 0, 'opening': 0, 'opentome': 0, 'scrapeblood': 0, 'secondpuzzle': 0, 'secondpuzzletokenright': 0, 'secondpuzzletokens': 0, 'secondpuzzleutter': 0, 'secondpuzzleutterall': 0, 'silentdoor': 0, 'thirdpuzzle': 0, 'thirdpuzzlefirsttileright': 0, 'thirdpuzzlefirsttilewrong': -1, 'tome': 0, 'training': 0, 'waitfordeath': 0, 'wordsondoor': 0, 'wormstome': 0}
 
 def main():

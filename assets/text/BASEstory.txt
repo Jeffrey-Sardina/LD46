@@ -124,17 +124,33 @@ thirdpuzzle.txt - You shake off that wild imagination and perceive that the brid
         thirdpuzzlefirsttilewrong.txt - You step on the tile. The tile slowly glows into a reddish color. You stand mystified until you feel your soles heating up. You shriek and jump back. You lose 1 HP. 
 
 thirdpuzzlesecondtile.txt - Which tile do you step on next?
-    1. Step on the tile that says 'Mae'
+    1. thirdpuzzlesecondtile.1.txt - Step on the tile that says 'Mae'.
         thirdpuzzlesecondtilewrong.txt - You step on the tile. The tile slowly glows into a yellowish color. You stand mystified until you feel your soles heating up. You shriek and jump back. You lose 2 HP.
-    1. Step on the tile that says 'Ppi'
+    2. thirdpuzzlesecondtile.2.txt - Step on the tile that says 'Ppi'.
         thirdpuzzlesecondtilewrong.txt - You step on the tile. The tile slowly glows into a yellowish color. You stand mystified until you feel your soles heating up. You shriek and jump back. You lose 2 HP.
-    1. Step on the tile that says 'Uzhmim'
-        thirdpuzzlesecondtileright.txt - You step on the center tile. Nothing happens. There are two other tiles in front of you, one directly ahead and the other to your left. To your right is the precipice leading to an infinite submission to gravity. 
+    3. thirdpuzzlesecondtile.3.txt - Step on the tile that says 'Uzhmim'.
+        thirdpuzzlesecondtileright.txt - You step on the right tile. Nothing happens. There are two other tiles in front of you, one directly ahead and the other to your left. To your right is the precipice leading to an infinite submission to gravity. 
 
 thirdpuzzlethirdtile.txt - Which tile do you step on next?
-    1. Step on the tile that says 'Ttaesh ma Atai'
-        thirdpuzzlethirdtileright.txt - You step on the tile. The tile slowly glows into a purplish color. You stand mystified until you feel your soles heating up. You shriek and jump back. You lose 2 HP.
-    1. Step on the tile that says 'Gaesh ma Sitai'
-        thirdpuzzlethirdtilewrong.txt - You step on the tile. The tile slowly glows into a purplish color. You stand mystified until you feel your soles heating up. You shriek and jump back. You lose 2 HP.
-    1. Step off the tile into impending darkness. 
-        falltodeath.txt - You step off the tile into the yawning darkness. As you launch forward, the tome falls out of your hands and onto the bridge, where it is never opened again. You lose. 
+    1. thirdpuzzlethirdtile.1.txt - Step on the tile that says 'Ttaesh ma Atai'.
+        thirdpuzzlethirdtileright.txt - You step on the center tile. Nothing happens. There are three other tiles in front of you.
+    2. thirdpuzzlethirdtile.2.txt - Step on the tile that says 'Gaesh ma Sitai'.
+        thirdpuzzlethirdtilewrong.txt - You step on the tile. The tile slowly glows into a purplish color. You stand mystified until you feel your soles heating up. You shriek and jump back. You lose 3 HP.
+    3. thirdpuzzlethirdtile.3.txt - Step off the tile into impending darkness. 
+        falltodeath.txt - You step off the tile into the yawning darkness. As you launch forward, the tome, with the help of the howling wind from down below, falls out of your hands and onto the bridge, where it is never opened again. You lose. 
+
+thirdpuzzlefourthtile.txt - Which tile do you step on next? You can see that this is the last row of tiles. Your heartbeat quickens. ###These are only names, to mess around with the player.###
+    1. thirdpuzzlefourthtile.1.txt - Step on the tile that says 'Haifnix'.
+        haifnix.txt - You curse at the incomplete tome and make an absolutely wild guess. This could cost your life, you were aware. You swallow and step on the tile. Nothing happens.A
+
+                        All of a sudden, above the archway leading into a hallway, you see glowing vines come together to form words, Ccaizhdi words! They glow, 'HAIFNIX, IGAF HUI BO'.
+    2. thirdpuzzlefourthtile.2.txt - Step on the tile that says 'Shexgozh'.
+        shexgozh.txt - You curse at the incomplete tome and make an absolutely wild guess. This could cost your life, you were aware. You swallow and step on the tile. Nothing happens.A
+
+                        All of a sudden, above the archway leading into a hallway, you see glowing vines come together to form words, Ccaizhdi words! They glow, 'SHEXGOZH, IGAF HUI BO'
+    3. thirdpuzzlefourthtile.3.txt - Step on the tile that says 'Magai'.
+        magai.txt - You curse at the incomplete tome and make an absolutely wild guess. This could cost your life, you were aware. You swallow and step on the tile. Nothing happens.A
+
+                        All of a sudden, above the archway leading into a hallway, you see glowing vines come together to form words, Ccaizhdi words! They glow, 'MAGAI, IGAF HUI BO'
+
+finishthirdpuzzle.txt - 

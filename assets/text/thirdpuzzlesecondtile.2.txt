@@ -1,2 +1,2 @@
-Step on the tile that says 'Ppi'
+Step on the tile that says 'Ppi'.
 thirdpuzzlesecondtilewrong.txt
