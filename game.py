@@ -150,12 +150,10 @@ def create_game_text_page(container, file_base_name, *args, **kwargs):
     label = tk.Label(background, text=text, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
     label.place(in_=background, x = screen_width // 2 - width // 2, y = 5 * screen_height // 10, width = width, height = 3 * screen_height // 10)
 
-    #Health
-    width = screen_width // 15
-    height = screen_height // 10
-    label = tk.Label(background, textvariable=hp_tk, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
-    label.place(in_=background, x = 0, y = 0, width = width, height = height)
+    #Player stats and UI (Health and Tome button)
+    gen_player_controls(background)
 
+    #Create button to move to a new page
     if next_file:
         gen_next_button(background, next_file)
     else:
@@ -209,6 +207,20 @@ def gen_game_buttons(page, background, src):
         else:
             more = False
 
+def gen_player_controls(background):
+    #Health indicator
+    health_width = screen_width // 15
+    health_height = screen_height // 20
+    label = tk.Label(background, textvariable=hp_tk, wraplength=health_width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
+    label.place(in_=background, x = 0, y = 0, width = health_width, height = health_height)
+
+    #Tome button
+    width = height = screen_width // 15
+    image = load_image_asset('tome_icon.jpg', width, height)
+    button = tk.Button(background, image=image, background=back_color, command=lambda:on_tome_button())
+    button.image = image
+    button.place(in_=background, x = 0, y=health_height, width=width, height=height)
+
 def create_end_page(container, *args, **kwargs):
     page = tk.Frame(container, *args, **kwargs)
 
@@ -234,6 +246,15 @@ def on_option(file_name):
     hp_val += hp_change_pages[file_name]
     hp_tk.set(hp_prefix + str(hp_val))
     show_page(file_name)
+
+def on_tome_button():
+    window = tk.Toplevel()
+    window.wm_title("Druidic Tome")
+
+    background_image = load_image_asset('paper.jpg', screen_width, screen_height)
+    background = tk.Label(window, image=background_image, background=back_color)
+    background.image = background_image #Just to save the reference
+    background.place(in_=window, x=0, y=0, relwidth=1, relheight=1)
 
 if __name__ == '__main__':
     main()
