@@ -1,1 +1,28 @@
-This is the THIRD tome page
+The Ccaizhdi people do not distinguish gender in pronouns, only number. If no pronouns are given, the first person is assumed.
+
+Object pronouns
+1sobj             ibo
+1pobj             ibai
+2sobj             igo
+2pobj             igai
+3s(person)obj     ifo
+3sobj(it)         ifob
+3pobj             ifai
+
+Subject Pronouns
+1s                 bo
+1p                 bai
+2s                 go
+2p                 gai
+3s(person)         fo
+3s(it)             fob
+3p                 fai
+
+Possessive Pronouns
+1sposs:            ma'ibo
+1pposs:            ma'ibai
+2sposs:            ma'igo
+2pposs:            ma'igai
+3s(person)poss:    ma'ifo
+3s(it)poss:        ma'ifob
+3pposs:            ma'ifai

@@ -1,0 +1,28 @@
+Ccaizhdi grammar makes use a few particularly important words and structures in addition to those mentioned before.
+
+Demonstrative pronouns
+    this / that     raizh
+    yon             gattai
+
+Relative pronoun
+    who / that / which   hla
+
+Negating a verb:
+    Place "raeg" after the verb
+
+Questions
+    If using a question word) then the question word goes last, so you have OBJECT VERB SUBJECT QUESTION_WORD?
+    If not, use the same OVS word order
+
+Noun number
+    paucal (only a few):   -(e)f
+    plural (many):         -(o)sh
+    Only add the vowel if the last letter of the word in a consonant.
+
+Tense suffixes
+    present:                  no change
+    past:                     (ae)g
+    since morning past:       (ae)pp
+    future:                   (i)x
+
+The Ccaizhdi do not use articles (a / an or the)

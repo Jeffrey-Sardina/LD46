@@ -1,1 +1,10 @@
-This is the second tome page
+Several expressions are very commonly used among the Ccaizhdi peoples.
+
+Hello (to one)      igo hluf bo
+Hello (to many)     igai hluf bo
+Thank you (to one)  igo xa dzifst
+Thank you (to many) igai xa dzifst
+You're welcome      dzifst
+Please              dzifst ab
+Sorry               ibo xa shezh
+Bye                 Ppaeftto shaixae!

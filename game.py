@@ -24,6 +24,7 @@ tome_pages = None
 hp_tk = None
 hp_prefix = 'Health: '
 hp_val = 10
+starting_hp = 10
 
 #Precompute this using meta.py before each build
 hp_change_pages = {'afterdruidcommands': 0, 'atbaseoftree': 0, 'BASEstory': -1, 'beforethirdpuzzle': 0, 'branchtoentrance': 0, 'chaseafterdruid': 0, 'climbtree': 0, 'decaytome': 0, 'entermaindoor': 0, 'findtree': 0, 'firstpuzzle': 0, 'firstpuzzleright': 0, 'firstpuzzleutter': 0, 'firstpuzzlewrong': -1, 'hiketotree': 0, 'introduction': 0, 'maindooropen': 0, 'maindooropensforreal': 0, 'mouthdrop': 0, 'nobudge': 0, 'opening': 0, 'opentome': 0, 'scrapeblood': 0, 'secondpuzzle': 0, 'secondpuzzletokenright': 0, 'secondpuzzletokens': 0, 'secondpuzzleutter': 0, 'secondpuzzleutterall': 0, 'silentdoor': 0, 'thirdpuzzle': 0, 'thirdpuzzlefirsttileright': 0, 'thirdpuzzlefirsttilewrong': -1, 'tome': 0, 'training': 0, 'waitfordeath': 0, 'wordsondoor': 0, 'wormstome': 0}
@@ -65,7 +66,8 @@ def load_pages():
     #One-offs
     pages['splash'] = create_splash_page(container, width=screen_width, height=screen_height)
     pages['howto'] = create_howto_page(container, 'training', width=screen_width, height=screen_height)
-    pages['end'] = create_end_page(container, width=screen_width, height=screen_height)
+    #pages['end'] = create_end_page(container, width=screen_width, height=screen_height)
+    pages['die'] = create_die_page(container, width=screen_width, height=screen_height)
 
     #All screens in game
     screens = description_text_files()
@@ -238,6 +240,28 @@ def create_end_page(container, *args, **kwargs):
 
     return page
 
+def create_die_page(container, *args, **kwargs):
+    page = tk.Frame(container, *args, **kwargs)
+
+    #Background
+    background_image = load_image_asset('die.jpg', screen_width, screen_height)
+    background = tk.Label(page, image=background_image, background=back_color)
+    background.image = background_image #Just to save the reference
+    background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
+
+    #Title
+    title = tk.Label(background, text='You lose', background=back_color, foreground=fore_color, font=(title_font_name, 42))
+    width = 2 * screen_width // 7
+    title.place(in_=background, x = screen_width // 2 - width // 2, y = screen_height // 10, width = width)
+
+    #Back
+    width = screen_width // 15
+    text = 'Quit'
+    btn1 = tk.Button(background, text=text, background=back_color, foreground = fore_color, font=(title_font_name, 17), wraplength=width, command=lambda:on_option('splash'))
+    btn1.place(in_=background, x = 0, y = 9 * screen_height // 10, width=width, height = screen_height // 15)
+
+    return page
+
 def on_start():
     show_page(start_file)
 
@@ -249,9 +273,14 @@ def on_leave():
 
 def on_option(file_name):
     global hp_val
-    hp_val += hp_change_pages[file_name]
-    hp_tk.set(hp_prefix + str(hp_val))
-    show_page(file_name)
+    if file_name in hp_change_pages:
+        hp_val += hp_change_pages[file_name]
+        hp_tk.set(hp_prefix + str(hp_val))
+    if hp_val > 0:
+        show_page(file_name)
+    else:
+        hp_val = starting_hp
+        show_page('die')
 
 def on_tome_button():
     global tome_created, sub_window, tome_text, tome_pages
@@ -270,7 +299,7 @@ def on_tome_button():
 
         #Background image
         background_image = load_image_asset('paper.jpg', screen_width, screen_height)
-        background = tk.Label(sub_window, textvariable=tome_text, image=background_image, compound=tk.CENTER, background=back_color, foreground = tome_text_color, font=(title_font_name, 27))
+        background = tk.Label(sub_window, textvariable=tome_text, wraplength=screen_width // 3, image=background_image, compound=tk.CENTER, background=back_color, foreground = tome_text_color, font=(title_font_name, 27))
         background.image = background_image #Just to save the reference
         background.place(in_=sub_window, x=0, y=0, relwidth=1, relheight=1)
 

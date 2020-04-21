@@ -1,1 +1,5 @@
-This is the first tome page
+The Ccaizhdi language is of a remarkably rare kind. The very structure of its words differ from a majority of languages, including a majority of those the Ccaizhdi themselves contact when they leave their homelands.
+
+In Ccaizhdi, the object of a sentence is said first, then the verb, and the subject at the end ('Enemy see I'). This is what our scholars have denoted an OVS order.
+
+On a similar strain, prepositions are said after their objects ('table on'), modifiers before their nouns ('large hill' or 'silver of sword').

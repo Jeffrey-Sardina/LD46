@@ -1,5 +1,5 @@
-Welcome to the word of INSERT_NAME! This is built as a text-adventure, so you control your character by using the on-screen buttons. All of your actions affect what path you take, and can cause you to lose or gain health or items.
+This is built as a text-adventure, so you control your character by using the on-screen buttons. All of your actions affect what path you take, and can cause you to lose or gain health or items.
 
-Your character begins with 4HP. This value is shown on the upper-right corner of the screen. You lose if you are reduced to 0HP, you lose.
+Your character begins with 10 HP. This value is shown on the upper-right corner of the screen. You lose if you are reduced to 0HP, you lose.
 
 At any time during the adventure, you may open up your items (such as the Druidic Tome) to view their contents on-screen. You can access this by selecting the book in the upper-right corner of the screen.

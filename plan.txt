@@ -9,10 +9,10 @@ Puzzle ideas:
     Language/cultural riddle
     Present an object that matches the word printed on an altar/archway/door to activate it
     Find a common parameter across words 
-    Create a name for themselves, swear fealty to that language's cult
+    3. Create a name for themselves, swear fealty to that language's cult
     2. Connect semantically similar words (provided a dictionary)
     1. Utter a word that matches the picture on an altar/archway/door to activate it
-    Jump only on the tiles that match a specific criteria (i.e. those with 3rd person subjects)
+    3. Jump only on the tiles that match a specific criteria (i.e. those with 3rd person subjects)
     Arrange tokens with words on them to create sentences commanding the door/whatever to Open
 
     BONUS puzzle: Can be a derivation of the above (maybe hidden as a visual/seemingly irrelevant choice, like '5: Check out the pile of rocks.')
@@ -34,5 +34,5 @@ Punishment ideas:
     Release a monster (that may die with the right language utterance) 
     Trapdoor back to one or two puzzles behind, have to do it again with different words
     Negative magical effect (having to utter a word/sentence more when facing a monster)
-    Condemnation of the Ccaizhdi priest-queen's spirit (maybe for the last puzzle?)
+    Condemnation by the Ccaizhdi priest-queen's spirit (maybe for the last puzzle?)
         Great. Absolutely great!

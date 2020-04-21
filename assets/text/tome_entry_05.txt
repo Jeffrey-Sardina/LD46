@@ -1,0 +1,30 @@
+Ccaizhdi numbers are as follows:
+
+Numbers
+    1   beb
+    2   ttef
+    3   saif
+    4   aizh
+    5   do
+    6   xai
+    7   faix
+    8   aeg
+    9   geb
+    10  ccaef
+    20  ttefaef
+    30  saifaef
+    40  aizhaef
+    50  doaef
+    60  xaiaef
+    70  faixaef
+    80  aegaef
+    90  gebaef
+    100 nebae
+    1k  amae
+
+    Other Numbers
+        to combine these, just string them in order
+            ex 1837 = amae nebae saifaef faix
+        no word for zero
+    Ordinals:
+        -(u)m

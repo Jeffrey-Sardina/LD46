@@ -153,4 +153,40 @@ thirdpuzzlefourthtile.txt - Which tile do you step on next? You can see that thi
 
                         All of a sudden, above the archway leading into a hallway, you see glowing vines come together to form words, Ccaizhdi words! They glow, 'MAGAI, IGAF HUI BO'
 
-finishthirdpuzzle.txt - 
+finishthirdpuzzle.txt - You wonder what that last word you just chose means. You got over the bridge at least, you happily think to yourself. The ceiling of the hallway opens up to a banquet room. Except that there are no tables, but rather rows up above, like at a coliseum, where they watch gladiators die.
+
+Once you fully take in your surroundings, the number of things to do overwhelm you. The monotony of the journey thus far has dulled you. Here, there is a burnt door at the top of the stairs, a barrel at the bottom, a tunnel to even further down below, and a majestic gilded door.
+
+You walk up to the gilded door and you quickly figure out the symbols directly on the center - they say, 'VAB XAE ****'. You notice a table with a golden chalice next to it. You also notice of a strange trap-like podium in the center of the room. The ceiling is immensely high, glinting from above.
+
+fourthpuzzle.txt - What do you do?
+    1. fourthpuzzle.1.txt - Walk up to ...
+        whattowalkto.txt - What do you walk up to?
+            1. whattowalkto.1.txt - The burnt door.
+                dodoburnt.txt - What do you do?
+                    1. dodoburnt.1.txt - Open it.
+                        flamestrap.txt - Flames burst out and lick at you. You lose 2 HP. You imagine that you hear faint laughing. 
+                    2. dodoburnt.2.txt - Leave.
+                        fourthpuzzle.txt
+            2. whattowalkto.2.txt - The barrel at the bottom of the stairs.
+                dodobarrel.txt - What do you do?
+                    1. dodobarrel.1.txt - Open it.
+                        openbarrel.txt - With an oof, you pry open the barrel cover and gaze down at a twig-like creature. It chirps and dashes directly towards you. You didn't have a chance to pull it off your face before it went down your gullet. You cough and cough, but gain 1 HP!
+                    2. dodobarrel.2.txt - Hack at it with your dirk.
+                        hack at barrel.txt - 
+            3. whattowalkto.3.txt - The tunnel.
+                dodotunnel.txt - What do you do?
+                    1. dodotunnel.1.txt - Get in it.
+                        slide.txt - You arrange your legs inside the tunnel. You push yourself off, and you promptly get dumped 
+                    2. dodotunnel.2.txt - Leave.
+            4. The gilded door.
+                What do you do?
+                    1. Chant the words on the door.
+                    2. Raise the golden chalice.
+    2. fourthpuzzle.2.txt - Get on ...
+        1. The barrel.
+        2. The trap-like podium at the center of the room.
+    
+    
+
+
