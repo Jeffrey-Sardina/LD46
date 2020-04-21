@@ -26,3 +26,4 @@ secondpuzzletokenwrong.jpg: https://free-images.com/display/earthquake_rubble_l_
 beforethirdpuzzle.jpg: Photo by Tyler Lastovich from Pexels, editted
 thirdpuzzlefirsttilewrong.jpg: https://pixabay.com/photos/fire-wood-fire-flame-burn-brand-171229/
 haifnix.jpg: https://pixabay.com/photos/stone-wall-doorway-vines-moss-72277/
+finishthirdpuzzle.jpg: https://free-images.com/display/italy_perugia_fortress_vault.html

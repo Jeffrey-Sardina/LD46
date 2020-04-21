@@ -153,7 +153,7 @@ thirdpuzzlefourthtile.txt - Which tile do you step on next? You can see that thi
 
                         All of a sudden, above the archway leading into a hallway, you see glowing vines come together to form words, Ccaizhdi words! They glow, 'MAGAI, IGAF HUI BO'
 
-finishthirdpuzzle.txt - You wonder what that last word you just chose means. You got over the bridge at least, you happily think to yourself. The ceiling of the hallway opens up to a banquet room. Except that there are no tables, but rather rows up above, like at a coliseum, where they watch gladiators die.
+finishthirdpuzzle.txt - You wonder what that last word you just chose mean. You got over the bridge at least, you happily think to yourself. The ceiling of the hallway opens up to a banquet room. Except that there are no tables, but rather rows up above, like at a coliseum, where they watch gladiators die.
 
 Once you fully take in your surroundings, the number of things to do overwhelm you. The monotony of the journey thus far has dulled you. Here, there is a burnt door at the top of the stairs, a barrel at the bottom, a tunnel to even further down below, and a majestic gilded door.
 
@@ -177,16 +177,22 @@ fourthpuzzle.txt - What do you do?
             3. whattowalkto.3.txt - The tunnel.
                 dodotunnel.txt - What do you do?
                     1. dodotunnel.1.txt - Get in it.
-                        slide.txt - You arrange your legs inside the tunnel. You push yourself off, and you promptly get dumped 
+                        slide.txt - You arrange your legs inside the tunnel. You push yourself off, and you promptly get dumped at the beginning of the landing. 
+                            wordsondoor.txt
                     2. dodotunnel.2.txt - Leave.
-            4. The gilded door.
-                What do you do?
-                    1. Chant the words on the door.
-                    2. Raise the golden chalice.
+            4. whattowalkto.4.txt - The gilded door.
+                dododoor.txt - What do you do?
+                    1. dododoor.1.txt - Chant the words on the door.
+                        chantwords.txt - You hear nothing but a faint cheering. 
+                    2. dododoor.2.txt - Raise the golden chalice.
+                        raisechalice.txt - You encapsulate the chalice with your filthy hands and raise it. You peer in it and it is magically filling with wine! Wine! You eagerly want to show it to someone, but see a gate in the distance creakily raising. You see a set of horns you've seen in literature... Those hooves... Those hands... Comes out a monstrosity donning an ox's head, a man's body, and the legs of a bull. The minotaur exhales forcefully and courses towards you, his battle ax swinging. You, being a puny little halfling, faint under the unmerciful minotaur's gaze. The tome is dashed to bits by the minotaur. You lose.
     2. fourthpuzzle.2.txt - Get on ...
-        1. The barrel.
-        2. The trap-like podium at the center of the room.
+        getonwhat.txt - What do you get on?
+            1. getonwhat.1.txt - The barrel.
+                standbarrel.txt - You stand on it. You look like a fool.
+            2. getonwhat.2.txt - The trap-like podium at the center of the room.
+                wingame.txt - You tentatively step on the trap-like podium at the center of the room. You hear a booming voice that amplified towards the end of every word, 'ZAI HAI IGO!' Blinding light envelopes your fragile body and suddenly, you feel yourself rising and being imbued with the most pleasant, magical energy you've ever felt...
     
-    
+wingame2.txt - Opening your eyes, you come to realize you no longer reside on the plane of complacency. You now breathe, see, and walk on the plane of theodom. You have this feeling deep down in your gut that assures the world of your godliness. Turning around, you see a monumentous crowd of Ccaizhdi peoples, jaws bellowing and weapons thumping against shields. You utter your name - 'Ccaizhdi-zai'!
 
 

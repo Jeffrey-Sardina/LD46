@@ -66,7 +66,6 @@ def load_pages():
     #One-offs
     pages['splash'] = create_splash_page(container, width=screen_width, height=screen_height)
     pages['howto'] = create_howto_page(container, 'training', width=screen_width, height=screen_height)
-    #pages['end'] = create_end_page(container, width=screen_width, height=screen_height)
     pages['die'] = create_die_page(container, width=screen_width, height=screen_height)
 
     #All screens in game
@@ -90,8 +89,8 @@ def create_splash_page(container, *args, **kwargs):
     background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
 
     #Title
-    title = tk.Label(background, text='Our Game', background=back_color, foreground=fore_color, font=(title_font_name, 42))
-    width = screen_width // 7
+    title = tk.Label(background, text='The Tome of the Ccaizhdi', background=back_color, foreground=fore_color, font=(title_font_name, 42))
+    width = screen_width // 3
     title.place(in_=background, x = screen_width // 2 - width // 2, y = screen_height // 10, width = width)
 
     #Start
@@ -228,17 +227,6 @@ def gen_player_controls(background):
     button = tk.Button(background, image=image, background=back_color, command=lambda:on_tome_button())
     button.image = image
     button.place(in_=background, x = 0, y=health_height, width=width, height=height)
-
-def create_end_page(container, *args, **kwargs):
-    page = tk.Frame(container, *args, **kwargs)
-
-    #Background
-    background_image = load_image_asset('temp.jpg', screen_width, screen_height)
-    background = tk.Label(page, image=background_image, background=back_color)
-    background.image = background_image #Just to save the reference
-    background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
-
-    return page
 
 def create_die_page(container, *args, **kwargs):
     page = tk.Frame(container, *args, **kwargs)

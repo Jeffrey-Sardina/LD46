@@ -1,0 +1,2 @@
+Chant the words on the door.
+chantwords.txt
