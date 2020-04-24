@@ -8,7 +8,8 @@ def determine_hp_change(text):
         hp_mod = -int(result.group().split(' ')[1])
     else:
         result = re.search('gain [1-9] HP', text)
-        hp_mod = -int(result.group().split(' ')[1])
+        if result:
+            hp_mod = int(result.group().split(' ')[1])
     return hp_mod
 
 def calc_hp_changes():

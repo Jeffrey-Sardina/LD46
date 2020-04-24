@@ -1,19 +1,20 @@
 Here is a select Ccaizhdi dictionary.
 
-Other words
-City    xaex
-Deadly	ppae
-Glaive  uzhmim
-Grow	hi
-Net     mae
-People  aehlub
-Sickle  ppi
-Study   faeb
-Staff    xu
-Tree    ccimhai
-War     hle
-Whip    ttaezh
-Yet     nae
-
-taker of heads      Ttaesh ma Atai
-turner of tides     Gaesh ma Sitai
+Common words
+of	   ma
+to	   ri
+in	   ai
+and	   zai
+for	   ab
+on	   xa
+with   zu
+as	   xo
+be	   hai
+yes	   ñeb
+at	   bo
+have   nub
+from   gai
+or	   ne
+by	   ma
+hot	   ppox
+but	   zu

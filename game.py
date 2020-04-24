@@ -27,7 +27,7 @@ hp_val = 10
 starting_hp = 10
 
 #Precompute this using meta.py before each build
-hp_change_pages = {'afterdruidcommands': 0, 'atbaseoftree': 0, 'BASEstory': -1, 'beforethirdpuzzle': 0, 'branchtoentrance': 0, 'chaseafterdruid': 0, 'climbtree': 0, 'decaytome': 0, 'entermaindoor': 0, 'findtree': 0, 'firstpuzzle': 0, 'firstpuzzleright': 0, 'firstpuzzleutter': 0, 'firstpuzzlewrong': -1, 'hiketotree': 0, 'introduction': 0, 'maindooropen': 0, 'maindooropensforreal': 0, 'mouthdrop': 0, 'nobudge': 0, 'opening': 0, 'opentome': 0, 'scrapeblood': 0, 'secondpuzzle': 0, 'secondpuzzletokenright': 0, 'secondpuzzletokens': 0, 'secondpuzzleutter': 0, 'secondpuzzleutterall': 0, 'silentdoor': 0, 'thirdpuzzle': 0, 'thirdpuzzlefirsttileright': 0, 'thirdpuzzlefirsttilewrong': -1, 'tome': 0, 'training': 0, 'waitfordeath': 0, 'wordsondoor': 0, 'wormstome': 0}
+hp_change_pages = {'afterdruidcommands': 0, 'atbaseoftree': 0, 'BASEstory': -1, 'beforethirdpuzzle': 0, 'branchtoentrance': 0, 'chantwords': 0, 'chaseafterdruid': 0, 'climbtree': 0, 'decaytome': 0, 'dodobarrel': 0, 'dodoburnt': 0, 'dododoor': 0, 'dodotunnel': 0, 'entermaindoor': 0, 'falltodeath': 0, 'findtree': 0, 'finishthirdpuzzle': 0, 'firstpuzzle': 0, 'firstpuzzleright': 0, 'firstpuzzleutter': 0, 'firstpuzzlewrong': -1, 'flamestrap': -2, 'fourthpuzzle': 0, 'hackbarrel': 0, 'haifnix': 0, 'hiketotree': 0, 'introduction': 0, 'magai': 0, 'maindooropen': 0, 'maindooropensforreal': 0, 'mouthdrop': 0, 'nobudge': 0, 'openbarrel': 1, 'opening': 0, 'opentome': 0, 'raisechalice': 0, 'scrapeblood': 0, 'secondpuzzle': 0, 'secondpuzzletokenright': 0, 'secondpuzzletokens': 0, 'secondpuzzletokenwrong': -1, 'secondpuzzleutter': 0, 'secondpuzzleutterall': 0, 'shexgozh': 0, 'silentdoor': 0, 'slide': 0, 'standbarrel': 0, 'thirdpuzzle': 0, 'thirdpuzzlefirsttileright': 0, 'thirdpuzzlefirsttilewrong': -1, 'thirdpuzzlefourthtile': 0, 'thirdpuzzlesecondtile': 0, 'thirdpuzzlesecondtileright': 0, 'thirdpuzzlesecondtilewrong': -2, 'thirdpuzzlethirdtile': 0, 'thirdpuzzlethirdtileright': 0, 'thirdpuzzlethirdtilewrong': -3, 'tome': 0, 'tome_entry_01': 0, 'tome_entry_02': 0, 'tome_entry_03': 0, 'tome_entry_04': 0, 'tome_entry_05': 0, 'tome_entry_06': 0, 'tome_entry_07': 0, 'tome_entry_08': 0, 'tome_entry_09': 0, 'tome_entry_10': 0, 'training': 0, 'waitfordeath': 0, 'whattowalkto': 0, 'wingame': 0, 'wingame2': 0, 'wordsondoor': 0, 'wormstome': 0}
 
 def main():
     global screen_width, screen_height, container, hp_tk
@@ -278,9 +278,6 @@ def on_tome_button():
 
         sub_window.geometry("%dx%d+0+0" % (screen_width // 3, screen_height // 3))
 
-        '''sub_container = tk.Frame(sub_window)
-        sub_container.pack(side="top", fill="both", expand=True)'''
-
         tome_pages = tome_texts()
         tome_text = tk.StringVar()
         tome_text.set(tome_pages[tome_idx])
@@ -295,26 +292,18 @@ def on_tome_button():
         gen_left_arrow(background)
         gen_right_arrow(background)
 
+        #Handle closing event:
+        sub_window.protocol("WM_DELETE_WINDOW", on_tome_closing)
+
         tome_created = True
     else:
         sub_window.lift()
 
-def generate_tome_page(sub_container, text, num, end, *args, **kwargs):
-    page = tk.Frame(sub_container, *args, **kwargs)
-
-    #Background image
-    background_image = load_image_asset('paper.jpg', screen_width, screen_height)
-    background = tk.Label(sub_container, text=text, image=background_image, compound=tk.CENTER, background=back_color, foreground = tome_text_color, font=(title_font_name, 27))
-    background.image = background_image #Just to save the reference
-    background.place(in_=sub_container, x=0, y=0, relwidth=1, relheight=1)
-
-    #Arrows
-    if num != 0:
-        gen_left_arrow(background, num)
-    if num != end:
-        gen_right_arrow(background, num)
-
-    return page
+def on_tome_closing():
+    global tome_created, sub_window
+    tome_created = False
+    sub_window.destroy()
+    sub_window = None
 
 def gen_left_arrow(background):
     text = '<'

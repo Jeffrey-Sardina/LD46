@@ -17,12 +17,3 @@ Subject Pronouns
 3s(person)         fo
 3s(it)             fob
 3p                 fai
-
-Possessive Pronouns
-1sposs:            ma'ibo
-1pposs:            ma'ibai
-2sposs:            ma'igo
-2pposs:            ma'igai
-3s(person)poss:    ma'ifo
-3s(it)poss:        ma'ifob
-3pposs:            ma'ifai

@@ -1,25 +1,10 @@
-Here is a select Ccaizhdi dictionary.
+The Ccaizhdi language can use other methods to create new words as well.
 
-Common words
-of	   ma
-to	   ri
-in	   ai
-and	   zai
-for	   ab
-on	   xa
-with   zu
-as	   xo
-be	   hai
-yes	   ñeb
-at	   bo
-have   nub
-from   gai
-or	   ne
-by	   ma
-hot	   ppox
-but	   zu
-some   shaizh
-what   nae
-can    ozh
-out    fix
-other   fai
+Describing who does something (ie, attack => attacker)
+    -(t)ai
+
+Describing the thing that causes something (ie war => the causer of war)
+    -(')ae
+
+Converting a verb to a noun (ie, need => necessary)
+    -(e)f
