@@ -3,11 +3,23 @@ import random
 import glob
 import os
 import re
+import json
 
 #Constants
 text_path = os.path.join('assets', 'text')
 image_path = os.path.join('assets', 'images')
 
+#JSON functions
+def load_json_text_asset(file_name):
+    '''
+    Load JSON from disk
+    '''
+    path = os.path.join(text_path, file_name)
+    with open(path, 'r') as input_file:
+        data = json.load(input_file) 
+    return data
+
+#TXT functions
 def tome_texts():
     tome_pages = []
     time_files = tome_text_files()
@@ -37,6 +49,7 @@ def load_text_asset(file_name):
     Get all text in a file
     '''
     path = os.path.join(text_path, file_name)
+    print(path)
     if os.path.exists(path):
         with open(path, 'r') as data:
             text = data.readlines()

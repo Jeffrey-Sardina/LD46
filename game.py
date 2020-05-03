@@ -32,6 +32,10 @@ hp_change_pages = {'afterdruidcommands': 0, 'atbaseoftree': 0, 'BASEstory': -1, 
 def main():
     global screen_width, screen_height, container, hp_tk
 
+    #Quick text--check terminal to make sure all looks good
+    json_data = load_json_text_asset('zz_temp.json')
+    print(json_data)
+
     #Create Outermost Window
     window = tk.Tk()
     window.title('Game')

@@ -1,0 +1,23 @@
+Story edits
+- priest queen
+- using the player's name later
+- finish adding a few more images
+- Work a bit more on the last room
+    - player wins after they utter and THEN step on the dais/platform
+- elaborate on dictionary
+- text entry (ie, player types stuff in)? Have to create a new puzzle for this one. Yeah
+- items you can use
+    - healing potions
+    - cloak that resists fire damage (there's a lot of fire here)
+- introduction - who is the player? Why are they where they are? 
+- introduction to the interface? (Here's the tome... here's what you do...?)
+
+Coding edits
+- incorporate player's name in endgame
+- dynamic page loading
+- json format for text files
+- Code it so that the player wins when they step on the dais/platform AFTER uttering what is on the door
+- Prevent the player from doing stuff again and again at the last room (i.e. destroying the barrel that's already destroyed) < yes!
+- text entry support
+- gif/video backgrounds
+    - find gifs/cinemagraphs

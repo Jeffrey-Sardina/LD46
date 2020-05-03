@@ -1,0 +1,8 @@
+{
+    "text":"this is text (can be very long description)",
+    "next":"sample.txt",
+    "damage":"5",
+    "healing":"0",
+    "items":"axe",
+    "next-page":"next.txt"
+}
