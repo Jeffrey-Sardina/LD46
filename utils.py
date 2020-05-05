@@ -49,7 +49,6 @@ def load_text_asset(file_name):
     Get all text in a file
     '''
     path = os.path.join(text_path, file_name)
-    print(path)
     if os.path.exists(path):
         with open(path, 'r') as data:
             text = data.readlines()
