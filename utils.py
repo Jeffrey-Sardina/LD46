@@ -7,6 +7,7 @@ import json
 
 #Constants
 text_path = os.path.join('assets', 'text')
+json_path = os.path.join('assets', 'json')
 image_path = os.path.join('assets', 'images')
 
 #JSON functions
@@ -14,10 +15,14 @@ def load_json_text_asset(file_name):
     '''
     Load JSON from disk
     '''
-    path = os.path.join(text_path, file_name)
-    with open(path, 'r') as input_file:
-        data = json.load(input_file) 
-    return data
+    path = os.path.join(json_path, file_name)
+    if os.path.exists(path):
+        with open(path, 'r') as input_file:
+            data = json.load(input_file) 
+        return data
+    else:
+        print('WARNING: file ' + path + ' does not exist')
+        return None
 
 #TXT functions
 def tome_texts():

@@ -11,7 +11,7 @@ def main():
 
     out_path = os.path.join('assets', 'json')
     for file_name in files:
-        base_name = os.path.basename(file_name).split('.')[0]
+        base_name = '.'.join(x for x in os.path.basename(file_name).split('.')[:-1])
         text, next_file = load_text_asset(base_name + '.txt')
         if base_name in health_changes:
             data_dict = {'text':text, 'next_file':next_file, 'health_change':health_changes[base_name]}

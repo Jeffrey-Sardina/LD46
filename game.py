@@ -32,10 +32,6 @@ hp_change_pages = {'afterdruidcommands': 0, 'atbaseoftree': 0, 'BASEstory': -1, 
 def main():
     global screen_width, screen_height, container, hp_tk
 
-    #Quick text--check terminal to make sure all looks good
-    json_data = load_json_text_asset('zz_temp.json')
-    print(json_data)
-
     #Create Outermost Window
     window = tk.Tk()
     window.title('Game')
@@ -60,7 +56,7 @@ def main():
     for page_id in pages:
         pages[page_id].place(in_=container, relwidth=1, relheight=1)
 
-    #Start on the consent page
+    #Start on the splash page
     show_page('splash')
 
     #Start GUI Loop--control now in the hands of the UI
@@ -73,9 +69,9 @@ def load_pages():
     pages['die'] = create_die_page(container, width=screen_width, height=screen_height)
 
     #All screens in game
-    screens = description_text_files()
-    for screen_name in screens:
-        pages[screen_name] = create_game_text_page(container, screen_name, width=screen_width, height=screen_height)
+    #screens = description_text_files()
+    #for screen_name in screens:
+    #    pages[screen_name] = create_game_text_page(container, screen_name, width=screen_width, height=screen_height)
 
 def show_page(to_show):
     print(to_show)
@@ -97,17 +93,18 @@ def create_splash_page(container, *args, **kwargs):
     width = screen_width // 3
     title.place(in_=background, x = screen_width // 2 - width // 2, y = screen_height // 10, width = width)
 
-    #Start
-    start = tk.Button(background, text='Begin Quest!', command=on_start, background=back_color, foreground=fore_color, font=(title_font_name, 23))
+    #Start Button
+    start_command = lambda:on_option(start_file)
+    start = tk.Button(background, text='Begin Quest!', command=start_command, background=back_color, foreground=fore_color, font=(title_font_name, 23))
     width = screen_width // 7
     start.place(in_=background, x = screen_width // 3 - width // 2, y = 3 * screen_height // 4, width = width)
 
-    #How to Play
+    #How to Play Button
     howto = tk.Button(background, text='Training Grounds', command=on_howto, background=back_color, foreground=fore_color, font=(title_font_name, 23))
     width = screen_width // 7
     howto.place(in_=background, x = screen_width // 2 - width // 2, y = 2 * screen_height // 3, width = width)
 
-    #Exit
+    #Exit Button
     leave = tk.Button(background, text="Cowards' Way Out", command=on_leave, background=back_color, foreground=fore_color, font=(title_font_name, 23))
     width = screen_width // 7
     leave.place(in_=background, x = 2 * screen_width // 3 - width // 2, y = 3 * screen_height // 4, width = width)
@@ -129,8 +126,8 @@ def create_howto_page(container, file_base_name, *args, **kwargs):
     title.place(in_=background, x = screen_width // 2 - width // 2, y = screen_height // 10, width = width)
 
     #Main Text
-    src = file_base_name + '.txt'
-    text, _ = load_text_asset(src)
+    src = file_base_name + '.json'
+    text = load_json_text_asset(src)['text']
     width = 4 * screen_width // 5
     label = tk.Label(background, text=text, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
     label.place(in_=background, x = screen_width // 2 - width // 2, y = 6 * screen_height // 10, width = width, height = 3 * screen_height // 10)
@@ -155,8 +152,11 @@ def create_game_text_page(container, file_base_name, *args, **kwargs):
     background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
 
     #Text
-    src = file_base_name + '.txt'
-    text, next_file = load_text_asset(src)
+    src = file_base_name + '.json'
+    data = load_json_text_asset(src)
+    text = data['text']
+    next_file = data['next_file']
+
     width = 4 * screen_width // 5
     label = tk.Label(background, text=text, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
     label.place(in_=background, x = screen_width // 2 - width // 2, y = 5 * screen_height // 10, width = width, height = 3 * screen_height // 10)
@@ -183,9 +183,12 @@ def gen_game_buttons(page, background, src):
     more = True
     width = 0.19 * screen_width
     file_base_name = src.split('.')[0]
-    text1, file_name1 = load_text_asset(file_base_name + '.1.txt')
-    command = lambda:on_option(file_name1)
-    if not text1:
+    data1 = load_json_text_asset(file_base_name + '.1.json')
+    if data1:
+        text1 = data1['text']
+        file_name1 = data1['next_file']
+        command = lambda:on_option(file_name1)
+    else:
         text1 = 'End Game'
         more = False
         command = lambda:show_page('splash')
@@ -195,24 +198,30 @@ def gen_game_buttons(page, background, src):
     
     #Make the other buttons as long as there are options
     if more:
-        text2, file_name2 = load_text_asset(file_base_name + '.2.txt')
-        if text2:
+        data2 = load_json_text_asset(file_base_name + '.2.json')
+        if data2:
+            text2 = data2['text']
+            file_name2 = data2['next_file']
             btn2 = tk.Button(background, text=text2, background=back_color, foreground = fore_color, font=(common_font_name, 17), wraplength=width, command=lambda:on_option(file_name2))
             btn2.place(in_=background, x = 2 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
         else:
             more = False
 
     if more:
-        text3, file_name3 = load_text_asset(file_base_name + '.3.txt')
-        if text3:
+        data3 = load_json_text_asset(file_base_name + '.3.json')
+        if data3:
+            text3 = data3['text']
+            file_name3 = data3['next_file']
             btn3 = tk.Button(background, text=text3, background=back_color, foreground = fore_color, font=(common_font_name, 17), wraplength=width, command=lambda:on_option(file_name3))
             btn3.place(in_=background, x = 3 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
         else:
             more = False
 
     if more:
-        text4, file_name4 = load_text_asset(file_base_name + '.4.txt')
-        if text4:
+        data4 = load_json_text_asset(file_base_name + '.4.json')
+        if data4:
+            text4 = data4['text']
+            file_name4 = data4['next_file']
             btn4 = tk.Button(background, text=text4, background=back_color, foreground = fore_color, font=(common_font_name, 17), wraplength=width, command=lambda:on_option(file_name4))
             btn4.place(in_=background, x = 4 * screen_width // 5 - width // 2, y = 8 * screen_height // 10, width = width, height = 1 * screen_height // 10)
         else:
@@ -254,9 +263,6 @@ def create_die_page(container, *args, **kwargs):
 
     return page
 
-def on_start():
-    show_page(start_file)
-
 def on_howto():
     show_page('howto')
 
@@ -264,11 +270,21 @@ def on_leave():
     sys.exit(0)
 
 def on_option(file_name):
+    '''
+    Called when the user pressed one of the options buttons.
+    Loads the screen corresponding to that options and displays it
+
+    file name: (str) the name of the new page, which is the same as its associated file
+    '''
     global hp_val
     if file_name in hp_change_pages:
         hp_val += hp_change_pages[file_name]
         hp_tk.set(hp_prefix + str(hp_val))
+
     if hp_val > 0:
+        if not file_name in pages:
+            pages[file_name] = create_game_text_page(container, file_name, width=screen_width, height=screen_height)
+            pages[file_name].place(in_=container)
         show_page(file_name)
     else:
         hp_val = starting_hp
