@@ -14,7 +14,7 @@ Story edits
 
 Coding edits
 - incorporate player's name in endgame
-- dynamic page loading
+- dynamic page loading //Done!
 - Code it so that the player wins when they step on the dais/platform AFTER uttering what is on the door
 - Prevent the player from doing stuff again and again at the last room (i.e. destroying the barrel that's already destroyed) < yes!
 - text entry support

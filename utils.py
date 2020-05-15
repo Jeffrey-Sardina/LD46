@@ -69,6 +69,7 @@ def load_text_asset(file_name):
     else:
         return None, None
 
+#Image functions
 def load_image_asset(file_name, width, height):
     path = os.path.join(image_path, file_name)
     if os.path.exists(path):
@@ -79,12 +80,6 @@ def load_image_asset(file_name, width, height):
         return imgtk
     else:
         return None
-
-def roll(num, d):
-    total = 0
-    for i in range(num):
-        total += random.randint(1, d)
-    return total
 
 def dimensions_to_fill_space(img, width, height):
     '''
@@ -115,3 +110,10 @@ def dimensions_to_fill_space(img, width, height):
         return width, width_based_scaling_height
     else:
         return height_based_scaling_width, height
+
+#Misc.
+def roll(num, d):
+    total = 0
+    for i in range(num):
+        total += random.randint(1, d)
+    return total
