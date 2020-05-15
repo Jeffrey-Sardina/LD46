@@ -68,11 +68,6 @@ def load_pages():
     pages['howto'] = create_howto_page(container, 'training', width=screen_width, height=screen_height)
     pages['die'] = create_die_page(container, width=screen_width, height=screen_height)
 
-    #All screens in game
-    #screens = description_text_files()
-    #for screen_name in screens:
-    #    pages[screen_name] = create_game_text_page(container, screen_name, width=screen_width, height=screen_height)
-
 def show_page(to_show):
     print(to_show)
     for page_id in pages:
@@ -140,7 +135,7 @@ def create_howto_page(container, file_base_name, *args, **kwargs):
 
     return page
 
-def create_game_text_page(container, file_base_name, *args, **kwargs):
+def create_game_text_page(container, file_base_name, data = None, *args, **kwargs):
     page = tk.Frame(container, *args, **kwargs)
 
     #Background
@@ -153,9 +148,10 @@ def create_game_text_page(container, file_base_name, *args, **kwargs):
 
     #Text
     src = file_base_name + '.json'
-    data = load_json_text_asset(src)
-    text = data['text']
-    next_file = data['next_file']
+    if not data:
+        data = load_json_text_asset(src)
+        text = data['text']
+        next_file = data['next_file']
 
     width = 4 * screen_width // 5
     label = tk.Label(background, text=text, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
@@ -277,18 +273,32 @@ def on_option(file_name):
     file name: (str) the name of the new page, which is the same as its associated file
     '''
     global hp_val
-    if file_name in hp_change_pages:
-        hp_val += hp_change_pages[file_name]
-        hp_tk.set(hp_prefix + str(hp_val))
-
-    if hp_val > 0:
+    page_data = load_json_text_asset(file_name + '.json')
+    alive = True
+    if page_data:
+        alive = change_health(page_data['health_change'])
+    if alive:
         if not file_name in pages:
             pages[file_name] = create_game_text_page(container, file_name, width=screen_width, height=screen_height)
             pages[file_name].place(in_=container)
         show_page(file_name)
     else:
-        hp_val = starting_hp
         show_page('die')
+
+def change_health(health_change):
+    '''
+    Change health by the given amount
+    Reutrn True if h > 0, else False
+    '''
+    global hp_val
+    hp_val += health_change
+    hp_val = min(hp_val, starting_hp)
+    hp_val = max(hp_val, 0)
+    hp_tk.set(hp_prefix + str(hp_val))
+
+    if hp_val == 0:
+        return False
+    return True
 
 def on_tome_button():
     global tome_created, sub_window, tome_text, tome_pages
