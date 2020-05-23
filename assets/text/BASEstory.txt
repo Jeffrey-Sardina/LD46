@@ -153,7 +153,7 @@ thirdpuzzlefourthtile.txt - Which tile do you step on next? You can see that thi
 
                         All of a sudden, above the archway leading into a hallway, you see glowing vines come together to form words, Ccaizhdi words! They glow, 'MAGAI, IGAF HUI BO'
 
-finishthirdpuzzle.txt - You wonder what that last word you just chose mean. You got over the bridge at least, you happily think to yourself. The ceiling of the hallway opens up to a banquet room. Except that there are no tables, but rather rows up above, like at a coliseum, where they watch gladiators die.
+finishthirdpuzzle.txt - You wonder what that last word you just chose mean. You got over the bridge at least, you happily think to yourself. The ceiling of the hallway opens up to a banquet room. Except that there are no tables, but rather rows of benches up above, like at a coliseum, where they watch gladiators die.
 
 Once you fully take in your surroundings, the number of things to do overwhelm you. The monotony of the journey thus far has dulled you. Here, there is a burnt door at the top of the stairs, a barrel at the bottom, a tunnel to even further down below, and a majestic gilded door.
 
@@ -173,7 +173,7 @@ fourthpuzzle.txt - What do you do?
                     1. dodobarrel.1.txt - Open it.
                         openbarrel.txt - With an oof, you pry open the barrel cover and gaze down at a twig-like creature. It chirps and dashes directly towards you. You didn't have a chance to pull it off your face before it went down your gullet. You cough and cough, but gain 1 HP!
                     2. dodobarrel.2.txt - Hack at it with your dirk.
-                        hack at barrel.txt - 
+                        hack at barrel.txt - You hack at it, yelling. All that remains are splinters. You hear a whispering cry. You examine the remains and can't find anything.
             3. whattowalkto.3.txt - The tunnel.
                 dodotunnel.txt - What do you do?
                     1. dodotunnel.1.txt - Get in it.
@@ -185,7 +185,7 @@ fourthpuzzle.txt - What do you do?
                     1. dododoor.1.txt - Chant the words on the door.
                         chantwords.txt - You hear nothing but a faint cheering. 
                     2. dododoor.2.txt - Raise the golden chalice.
-                        raisechalice.txt - You encapsulate the chalice with your filthy hands and raise it. You peer in it and it is magically filling with wine! Wine! You eagerly want to show it to someone, but see a gate in the distance creakily raising. You see a set of horns you've seen in literature... Those hooves... Those hands... Comes out a monstrosity donning an ox's head, a man's body, and the legs of a bull. The minotaur exhales forcefully and courses towards you, his battle ax swinging. You, being a puny little halfling, faint under the unmerciful minotaur's gaze. The tome is dashed to bits by the minotaur. You lose.
+                        raisechalice.txt - You encapsulate the chalice with your filthy hands and raise it. You peer in it and it is magically filling with wine! Wine! You eagerly want to show it to someone, but see a gate in the distance creakily raising. You see a set of horns you've seen in literature... Those hooves... Those hands... Out comes a monstrosity donning an ox's head, a man's body, and the legs of a bull. The minotaur exhales forcefully and courses towards you, his battle ax swinging. You, being a laughable puny halfling, faint unceremoniously under the unmerciful minotaur's gaze.  The tome is dashed to bits by the minotaur who then eats it as fodder. You lose.
     2. fourthpuzzle.2.txt - Get on ...
         getonwhat.txt - What do you get on?
             1. getonwhat.1.txt - The barrel.
@@ -193,6 +193,6 @@ fourthpuzzle.txt - What do you do?
             2. getonwhat.2.txt - The trap-like podium at the center of the room.
                 wingame.txt - You tentatively step on the trap-like podium at the center of the room. You hear a booming voice that amplified towards the end of every word, 'ZAI HAI IGO!' Blinding light envelopes your fragile body and suddenly, you feel yourself rising and being imbued with the most pleasant, magical energy you've ever felt...
     
-wingame2.txt - Opening your eyes, you come to realize you no longer reside on the plane of complacency. You now breathe, see, and walk on the plane of theodom. You have this feeling deep down in your gut that assures the world of your godliness. Turning around, you see a monumentous crowd of Ccaizhdi peoples, jaws bellowing and weapons thumping against shields. You utter your name - 'Ccaizhdi-zai'!
+wingame2.txt - Opening your eyes, you come to realize you no longer reside on the plane of complacency. In front of you levitates the same priest-queen you saw engraved on the massive wooden doors at the entrance. Her eyes are purple and cashew-shaped, glaring benevolently at you. You do not know how but you command your body to rise to her level and approach her. A swell of incense, infused into her body, washes over you. You can see her hands, ornately decorated with filigrees of purple and gold, reaching up to cradle your face. You close your eyes, submitting to her draw. You now breathe, see, and walk on the plane of veneration. You have this feeling deep down in your gut that assures the world of your godliness. Turning around, you address a monumental crowd of Ccaizhdi peoples, jaws bellowing and weapons thumping against shields. You utter your name - 'Ccaizhdi-zai'!
 
 

@@ -1,4 +1,4 @@
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk, ImageSequence
 import random
 import glob
 import os
@@ -71,6 +71,9 @@ def load_text_asset(file_name):
 
 #Image functions
 def load_image_asset(file_name, width, height):
+    '''
+    Loads a single static image
+    '''
     path = os.path.join(image_path, file_name)
     if os.path.exists(path):
         image = Image.open(path)
@@ -80,6 +83,24 @@ def load_image_asset(file_name, width, height):
         return imgtk
     else:
         return None
+
+def load_gif_asset(file_name, width, height):
+    '''
+    Loads all frames in a gif and returns them as a list
+    '''
+    path = os.path.join(image_path, file_name)
+    if os.path.exists(path):
+        gif = Image.open("animation.gif")
+        image_frames = []
+        for image_frame in ImageSequence.Iterator(gif):
+            img_width, img_height = dimensions_to_fill_space(image_frame, width, height)
+            image_frame = image_frame.resize((int(img_width), int(img_height)))
+            imgtk = ImageTk.PhotoImage(image=image_frame)
+            image_frames.append(imgtk)
+        return image_frame
+    else:
+        return None
+
 
 def dimensions_to_fill_space(img, width, height):
     '''

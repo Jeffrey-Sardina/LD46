@@ -132,6 +132,85 @@ def create_howto_page(container, file_base_name, *args, **kwargs):
 
     return page
 
+class GameTextPage():
+    def __init__(self, container, file_base_name, data, *args, **kwargs):
+        self.container = container
+        self.file_base_name = file_base_name
+        self.data = data
+        self.page = tk.Frame(container, *args, **kwargs)
+        self.allow_animation = True
+        self.create_game_text_page()
+
+    def create_game_text_page(self):
+        #Background
+        background_image = load_image_asset(file_base_name + '.jpg', screen_width, screen_height)
+        if not background_image:
+            background_image = load_image_asset('temp.jpg', screen_width, screen_height)
+        background = tk.Label(page, image=background_image, background=back_color)
+        background.image = background_image #Just to save the reference
+        background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
+
+        #Text
+        src = file_base_name + '.json'
+        if not self.data:
+            self.data = load_json_text_asset(src)
+            text = data['text']
+            next_file = data['next_file']
+
+        width = 4 * screen_width // 5
+        label = tk.Label(background, text=text, wraplength=width, background=back_color, foreground = fore_color, anchor='w', font=(common_font_name, 17))
+        label.place(in_=background, x = screen_width // 2 - width // 2, y = 5 * screen_height // 10, width = width, height = 3 * screen_height // 10)
+
+        #Player stats and UI (Health and Tome button)
+        gen_player_controls(background)
+
+        #Create button to move to a new page
+        if next_file:
+            gen_next_button(background, next_file)
+        else:
+            gen_game_buttons(page, background, src)
+
+        return page
+
+    def determine_background(self):
+        #Try to fina a static image
+        self.background_image = load_image_asset(file_base_name + '.jpg', screen_width, screen_height)
+        if not self.background_image:
+            self.background_image = load_image_asset(file_base_name + '.png', screen_width, screen_height)
+        if self.background_image:
+            self.place_image_background()
+            return
+
+        #If that fails, try to fina a gif animation
+        self.background_image_array = load_image_asset('temp.gif', screen_width, screen_height)
+        if self.background_image_array:
+            self.place_img_frame_background()
+        
+    def place_img_frame_background(self):
+        background = tk.Label(page, image=background_image, background=back_color)
+        self.update_img_frame_background(0)
+
+    def update_img_frame_background(self, background, index):
+        img_frame = self.background_image_array[index]
+        index = (index + 1) % len(self.background_image_array)
+        background.configure(image=img_frame)
+        if allow_animation:
+            background.after(100, self.place_img_frame_background, index) #was root.after in example
+
+    def place_image_background(self):
+        background = tk.Label(page, image=self.background_image, background=back_color)
+        #background.image = self.background_image #Just to save the reference. May not be needed now, TODO try removing. 
+        background.place(in_=page, x=0, y=0, relwidth=1, relheight=1)
+
+    def lower(self):
+        self.allow_animation = False
+        self.page.lower()
+
+    def lift(self):
+        self.allow_animation = True
+        self.page.lift()
+        self.update_img_frame_background(0) #Restart animation
+
 def create_game_text_page(container, file_base_name, data = None, *args, **kwargs):
     page = tk.Frame(container, *args, **kwargs)
 

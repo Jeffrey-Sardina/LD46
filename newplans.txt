@@ -1,6 +1,6 @@
 Story edits
-- priest queen
-- using the player's name later
+- priest queen //Done!
+- using the player's name later //Jeffrey, can you do this? 
 - finish adding a few more images
 - Work a bit more on the last room
     - player wins after they utter and THEN step on the dais/platform
@@ -14,7 +14,7 @@ Story edits
 
 Coding edits
 - incorporate player's name in endgame
-- dynamic page loading //Done!
+- dynamic page loading //Done! #Yay! 
 - Code it so that the player wins when they step on the dais/platform AFTER uttering what is on the door
 - Prevent the player from doing stuff again and again at the last room (i.e. destroying the barrel that's already destroyed) < yes!
 - text entry support
